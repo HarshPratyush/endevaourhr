@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './static/home/home.component';
 import { AboutUsComponent } from './static/about-us/about-us.component';
 import { ContactUsComponent } from './static/contact-us/contact-us.component';
+import { UnderConstructionComponent } from './static/under-construction/under-construction.component';
 
 
 const routes: Routes = [{
@@ -21,7 +22,13 @@ const routes: Routes = [{
     path: 'contact-us',
     component: ContactUsComponent,
     pathMatch: 'full',
-    data:{title : 'Endevaour-Contact Us' },
+    data:{title : 'Endevaour-Contact Us' }
+  },
+  {
+    path: 'under-construction',
+    component: UnderConstructionComponent,
+    pathMatch: 'full',
+    data:{title : 'Under Construction' }
   }];
 
 @NgModule({

@@ -1,9 +1,19 @@
-#dpsp-floating-sidebar.dpsp-position-left {
+.floating-sidebar.dpsp-position-left {
     left: 0;
 }
 
-#dpsp-floating-sidebar {
+.floating-sidebar {
     position: fixed;
     top: 30%;
     z-index: 9998;
+}
+
+
+
+.width-100{
+    width: 100% !important;
+}
+
+.desc{
+    font-size: 14px;
 }

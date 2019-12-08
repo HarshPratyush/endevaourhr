@@ -3,14 +3,54 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~@ngx-share/button/themes/circles/circles-dark-theme";
 @import '~@ngx-share/button/themes/default/default-theme';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+$primary-color:#3f51b5;
+$primary-color-hover:#303c80;
+
 
 html, body { height: 100%; }
 body { margin: 0; }
 .container-fluid {
-    width: 95%;
+    width: 85%;
     padding: 0;
 }
 
 .sb-button, .sb-group {
     display: inline-grid !important;
 }
+
+.margin-bottom-50{
+    margin-bottom: 50px;
+}
+
+.margin-top-100{
+    margin-top: 100px;
+}
+
+.btn{
+    border-radius: 0px !important;
+}
+
+.divider{
+    padding: 0;
+    border: none;
+    height: 2px;
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,0),#00632e,rgba(0,0,0,0));
+}
+
+.main-content{
+    margin-top: 72px;
+}
+
+.btn-primary{
+    background-color: $primary-color;
+    border-color:$primary-color;
+}
+
+.btn-primary:hover{
+    background-color: $primary-color-hover;
+    border-color:$primary-color-hover;
+}
+
