@@ -1,0 +1,9 @@
+#dpsp-floating-sidebar.dpsp-position-left {
+    left: 0;
+}
+
+#dpsp-floating-sidebar {
+    position: fixed;
+    top: 30%;
+    z-index: 9998;
+}
