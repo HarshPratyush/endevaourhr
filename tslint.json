@@ -12,13 +12,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "endeavour",
+      "najah",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "endeavour",
+      "najah",
       "kebab-case"
     ],
     "import-blacklist": [

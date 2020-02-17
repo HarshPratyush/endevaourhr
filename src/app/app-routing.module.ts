@@ -10,25 +10,25 @@ const routes: Routes = [{
   path: '',
   component: HomeComponent,
   pathMatch: 'full',
-  data:{title : 'Endevaour-Home' }
+  data:{title : 'Najah-Home' }
 },
   {
     path: 'about-us',
     component: AboutUsComponent,
     pathMatch: 'full',
-    data:{title : 'Endevaour-About Us' },
+    data:{title : 'Najah-About Us' },
   },
   {
     path: 'contact-us',
     component: ContactUsComponent,
     pathMatch: 'full',
-    data:{title : 'Endevaour-Contact Us' }
+    data:{title : 'Najah-Contact Us' }
   },
   {
     path: 'under-construction',
     component: UnderConstructionComponent,
     pathMatch: 'full',
-    data:{title : 'Under Construction' }
+    data:{title : 'Najah Construction' }
   }];
 
 @NgModule({
