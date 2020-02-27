@@ -1,0 +1,90 @@
+$primary-color:#3f51b5;
+
+.fixed-height{
+    height: 30em;
+}
+
+.carousel-item .carousel-caption{
+    color: #333333 !important;
+}
+
+.carousel-item img{
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.card-title{
+    font-size: 1.3em;
+    color: $primary-color;
+}
+
+.block{
+    font-weight: bolder;
+}
+
+.service-icon-wrap {
+    background: $primary-color;
+    color: #fff;
+    display: block;
+    float: left;
+    font-size: 26px;
+    height: 60px;
+    line-height: 60px;
+    margin-right: 20px;
+    text-align: center;
+    width: 60px;
+    position: relative;
+}
+
+.service-icon-wrap:after {
+    position: absolute;
+    left: 50%;
+    bottom: -9px;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-top: 10px solid $primary-color;
+    content: "";
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.margin-top-20{
+    margin-top: 20px;
+}
+
+
+.carousel-item {
+    height: 32rem;
+    background-color: #777;
+}
+
+.carousel {
+    margin-bottom: 4rem;
+}
+
+.headings{
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    
+}
+
+.headings .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.headings .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+

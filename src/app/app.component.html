@@ -1,16 +1,9 @@
-<endeavour-header></endeavour-header>
+<najah-header></najah-header>
 <ngx-loading-bar></ngx-loading-bar>
 <div style="position: relative;" class="main-content" >
     <div  class="floating-sidebar position-left" style="top: 277px;">
-
-   <share-buttons [theme]="'circles-dark'"
-   [include]="['facebook','twitter','linkedin','google','pinterest']"
-   [url]="'http://endeavourhr.me/'"
-   [autoSetMeta]="false"
-   [size]="-3"
-  ></share-buttons>
-  
+  <najah-social-share></najah-social-share>
   </div>
     <router-outlet></router-outlet>
 </div>
-<endeavour-footer></endeavour-footer>
+<najah-footer></najah-footer>

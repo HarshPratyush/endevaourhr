@@ -11,12 +11,14 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { StaticModule } from './static/static.module';
 import { ShareButtonsModule } from '@ngx-share/buttons';
+import { SocialShareComponent } from './common/social-share/social-share.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SocialShareComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,6 @@ import { ShareButtonsModule } from '@ngx-share/buttons';
     LoadingBarModule,
     StaticModule,
     ShareButtonsModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
