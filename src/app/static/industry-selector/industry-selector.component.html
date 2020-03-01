@@ -1,0 +1,8 @@
+<div class="row margin-bottom-50">
+    <div class="col-md-4" *ngFor="let item of specialization | slice:0:11; let i=index">
+        <button class="btn btn-primary specilization-button" (click)="routeToIndustry(item)">{{item.name}}</button>
+    </div>
+    <div class="col-md-4" >
+       <button class="btn btn-primary specilization-button"(click)="routeToIndustry()">View More</button>
+   </div>
+</div>   

@@ -1,5 +1,8 @@
+<najah-bread-crumb [pageName]="'About Us'" [breadCrumb]='breadCrumb'
+ [imageUrl]="'assets/images/About-us-min.jpg'"></najah-bread-crumb>
+
 <div class="container-fluid ">
-<div class="row margin-top-100">
+<div class="row">
     <div class="col-md-9">
                     <h2 class="featurette-heading">Lorem Ipsum <span class="text-muted">onec ullamcorper nulla non</span></h2>
                     <p class="desc">
@@ -67,11 +70,7 @@
 
                     <h2 class="featurette-heading">Our Specialization</h2> 
                     
-                 <div class="row margin-bottom-50">
-                     <div class="col-md-4" *ngFor="let item of arrayOne(9); let i = index;">
-                         <button class="btn btn-primary specilization-button">Specilization {{i+1}}</button>
-                     </div>
-                 </div>   
+                <najah-industry-selector></najah-industry-selector>
                     
     </div>
     <div class="col-md-3">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from 'src/app/common/common.service';
 
 @Component({
   selector: 'najah-about-us',
@@ -7,15 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutUsComponent implements OnInit {
 
-  specialization : string[] =["Specilization1"]
-  constructor() { }
+  breadCrumb:{name:string,url:string,isLast:boolean}[]=[
+    {name:'Home',url:'',isLast:false},
+    {name:'About Us', url:'about-us',isLast:true}
+  ]
 
-  ngOnInit() {
-  }
-
-
-  arrayOne(n: number): any[] {
-    return Array(n);
+  ngOnInit(){
+    
   }
 
 }

@@ -6,14 +6,16 @@
 @import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 @import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
-$primary-color:#3f51b5;
-$primary-color-hover:#303c80;
+$primary-color:#389599;
+$primary-color-hover:#447679;
+$breadcrumb-divider: quote(">");
 
 
 html, body { height: 100%; }
-body { margin: 0; }
+body { margin: 0; 
+font-family: cursive;}
 .container-fluid {
-    width: 85%;
+    width: 90%;
     padding: 0;
 }
 
@@ -49,8 +51,8 @@ body { margin: 0; }
     border-color:$primary-color;
 }
 
-.btn-primary:hover{
-    background-color: $primary-color-hover;
-    border-color:$primary-color-hover;
+.btn-primary:hover,.btn-primary:active{
+    background-color: $primary-color-hover !important;
+    border-color:$primary-color-hover !important;
 }
 

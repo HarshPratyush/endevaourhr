@@ -12,13 +12,16 @@ import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { StaticModule } from './static/static.module';
 import { ShareButtonsModule } from '@ngx-share/buttons';
 import { SocialShareComponent } from './common/social-share/social-share.component';
+import { HttpInterceptorService } from './common/http-interceptor.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    SocialShareComponent
+    SocialShareComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,9 +31,10 @@ import { SocialShareComponent } from './common/social-share/social-share.compone
     LoadingBarRouterModule,
     LoadingBarModule,
     StaticModule,
-    ShareButtonsModule
+    ShareButtonsModule,
+    NgxSpinnerModule
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:HttpInterceptorService,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

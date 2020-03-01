@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactUsComponent implements OnInit {
 
+  breadCrumb:{name:string,url:string,isLast:boolean}[]=[
+    {name:'Home',url:'',isLast:false},
+    {name:'Contact Us', url:'contact-us',isLast:true}
+  ]
+
   constructor() { }
 
   ngOnInit() {

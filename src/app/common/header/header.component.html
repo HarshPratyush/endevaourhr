@@ -1,7 +1,11 @@
 <header>
-        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
-          <a class="navbar-brand company-name" >Najah HR</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          
+          <div  class="left-container">
+            <a><img  class="logo" src="assets/images/logo.jpg"></a><h1  class="heading-title">
+            NAJAH-HR </h1></div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" 
+          data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse offset-md-3" id="navbarCollapse">
@@ -15,8 +19,8 @@
               <li class="nav-item" [ngClass]="{'active': router.url=='/contact-us'}">
                 <a class="nav-link" mdbRippleRadius routerLink="contact-us">Contact Us</a>
               </li>
-              <li class="nav-item" [ngClass]="{'active': router.url=='/under-construction-1'}">
-                <a class="nav-link" mdbRippleRadius routerLink="under-construction">Services</a>
+              <li class="nav-item" [ngClass]="{'active': router.url=='/service'}">
+                <a class="nav-link" mdbRippleRadius routerLink="service">Services</a>
               </li>
               <li class="nav-item" [ngClass]="{'active': router.url=='/under-construction1'}">
                 <a class="nav-link" mdbRippleRadius routerLink="under-construction">Job Seeker</a>
@@ -24,8 +28,14 @@
               <li class="nav-item" [ngClass]="{'active': router.url=='/contact-us1'}">
                 <a class="nav-link" mdbRippleRadius routerLink="under-construction">Employer</a>
               </li>
-              <li class="nav-item" [ngClass]="{'active': router.url=='/contact-u1s'}">
-                <a class="nav-link" mdbRippleRadius routerLink="under-construction">Industries</a>
+              <li class="nav-item dropdown" [ngClass]="{'active': router.url=='/industries'}">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                data-animations="fadeInDown fadeInLeft fadeInUp fadeInRight" data-toggle="dropdown" mdbRippleRadius >Industries</a>
+                <div class="dropdown-menu arrow" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" *ngFor="let industry of industries" (click)="routeToIndustry(industry)">{{industry.name}}</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" (click)="routeToIndustry()">View All</a>
+                </div>
               </li>
             </ul>
             <form class="form-inline mt-2 mt-md-0">
