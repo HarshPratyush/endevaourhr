@@ -1,0 +1,16 @@
+<div class="container-fluid ">
+    <div class="row margin-top-100">
+        <div class="col-md-9 row">
+        <div class="col-md-6" *ngFor="let industry of specialization">
+            <span class="name">{{industry.name}}</span>
+            <img class="industry-img" align="left" src="./assets/images/looking-for-workers.jpg">
+           <p class="max-lines"> 
+               {{industry.description}}
+           </p> 
+        </div>
+        </div>
+        <div class="col-md-3">
+            <najah-side-nav-details></najah-side-nav-details>
+    </div>
+    </div>
+</div>

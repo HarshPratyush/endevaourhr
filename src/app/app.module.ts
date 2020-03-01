@@ -12,13 +12,17 @@ import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { StaticModule } from './static/static.module';
 import { ShareButtonsModule } from '@ngx-share/buttons';
 import { SocialShareComponent } from './common/social-share/social-share.component';
+import { HttpInterceptorService } from './common/http-interceptor.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SideNavDetailsComponent } from './static/side-nav-details/side-nav-details.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    SocialShareComponent
+    SocialShareComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,7 @@ import { SocialShareComponent } from './common/social-share/social-share.compone
     StaticModule,
     ShareButtonsModule
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:HttpInterceptorService,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

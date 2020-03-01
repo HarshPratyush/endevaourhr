@@ -4,6 +4,7 @@ import { HomeComponent } from './static/home/home.component';
 import { AboutUsComponent } from './static/about-us/about-us.component';
 import { ContactUsComponent } from './static/contact-us/contact-us.component';
 import { UnderConstructionComponent } from './static/under-construction/under-construction.component';
+import { ServiceComponent } from './static/service/service.component';
 
 
 const routes: Routes = [{
@@ -25,10 +26,19 @@ const routes: Routes = [{
     data:{title : 'Najah-Contact Us' }
   },
   {
+    path: 'service',
+    component: ServiceComponent,
+    pathMatch: 'full',
+    data:{title : 'Najah-Services' }
+  },
+  {
     path: 'under-construction',
     component: UnderConstructionComponent,
     pathMatch: 'full',
     data:{title : 'Najah Construction' }
+  },{
+    path:'industries',
+    loadChildren:() => import('./industries/industries.module').then(m => m.IndustriesModule)
   }];
 
 @NgModule({
