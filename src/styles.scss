@@ -10,8 +10,10 @@ $primary-color:#389599;
 $primary-color-hover:#447679;
 $breadcrumb-divider: quote(">");
 
+
 html, body { height: 100%; }
-body { margin: 0; }
+body { margin: 0; 
+font-family: cursive;}
 .container-fluid {
     width: 90%;
     padding: 0;
