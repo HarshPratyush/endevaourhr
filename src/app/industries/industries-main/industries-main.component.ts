@@ -11,6 +11,11 @@ export class IndustriesMainComponent implements OnInit {
 
   specialization : any[]=[]
   constructor(private commonSerive:CommonService,private _routrer:Router) { }
+  
+  breadCrumb:{name:string,url:string,isLast:boolean}[]=[
+    {name:'Home',url:'',isLast:false},
+    {name:'Industries', url:'industries',isLast:true}
+  ]
 
   ngOnInit() {
     console.log("landed in main ")
@@ -21,5 +26,16 @@ export class IndustriesMainComponent implements OnInit {
       this.specialization= result;
     })
 
+  }
+
+  getSlicedString(value:string,index:number):string{
+    return value.slice(0,index)+'...';
+  }
+
+  routeToIndustry(industry ? : any){
+    if(industry)
+    this._routrer.navigate(["/industries",industry.url])
+    else
+    this._routrer.navigateByUrl("/industries")
   }
 }

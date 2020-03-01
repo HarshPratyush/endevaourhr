@@ -13,4 +13,11 @@ export class CommonService {
   getIndustries():Observable<any>{
     return this.http.get(AppConstants.GET_ALL_INDUSTRIES);
   }
+
+  getHeaders():Observable<any>{
+    return this.http.get(AppConstants.GET_HEADER_INDUSTRIES);
+  }
+  getSingleIndustry(industryName:string):Observable<any>{
+    return this.http.get(AppConstants.GET_SINGLE_INDUSTRIES);
+  }
 }

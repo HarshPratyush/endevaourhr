@@ -8,7 +8,8 @@ const routes: Routes = [
   {
     path:'',
     component:IndustriesMainComponent,
-    pathMatch:'full' 
+    pathMatch:'full',
+    data:{title : 'Industries' } 
   },
   {
     path:':servicename',

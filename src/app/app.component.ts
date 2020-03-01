@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-
-declare var $:any;
+import { LoadingBarService } from '@ngx-loading-bar/core';
+import { NgxSpinnerService } from 'ngx-spinner';
+declare var $:any;  
 
 @Component({
   selector: 'najah-root',
@@ -8,8 +9,17 @@ declare var $:any;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(){
-
+  constructor(public loader: LoadingBarService,private spinner: NgxSpinnerService){
+    this.loader.progress$.subscribe(data=>{
+      if(data>0)
+      {
+        this.spinner.show();
+      }
+      else
+      {
+        this.spinner.hide();
+      }
+    })
   }
 
   

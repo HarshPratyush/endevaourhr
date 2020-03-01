@@ -23,7 +23,6 @@ export class IndustrySelectorComponent implements OnInit {
   }
 
   routeToIndustry(industry ? : any){
-    this._routrer.navigate(['industries']);
     if(industry)
     this._routrer.navigate(["/industries",industry.url])
     else

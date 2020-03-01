@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiceComponent implements OnInit {
 
+  breadCrumb:{name:string,url:string,isLast:boolean}[]=[
+    {name:'Home',url:'',isLast:false},
+    {name:'Services', url:'services',isLast:true}
+  ]
+
   constructor() { }
 
   ngOnInit() {

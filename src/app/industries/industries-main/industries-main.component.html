@@ -1,12 +1,16 @@
+<najah-bread-crumb [pageName]="'Industries'" [breadCrumb]='breadCrumb'
+ [imageUrl]="'assets/images/services-length.png'"></najah-bread-crumb>
+
 <div class="container-fluid ">
-    <div class="row margin-top-100">
+    <div class="row">
         <div class="col-md-9 row">
-        <div class="col-md-6" *ngFor="let industry of specialization">
-            <span class="name">{{industry.name}}</span>
-            <img class="industry-img" align="left" src="./assets/images/looking-for-workers.jpg">
+        <div class="col-md-6 description" *ngFor="let industry of specialization">
+            <div class="name">{{industry.name}}</div>
+            <img class="industry-img" align="left" [src]="industry.image">
            <p class="max-lines"> 
-               {{industry.description}}
+               {{getSlicedString(industry.description,300)}}
            </p> 
+           <button type="button" class="btn btn-info" (click)="routeToIndustry(industry)"><i class="fa fa-arrow-right"></i> Have Look</button>
         </div>
         </div>
         <div class="col-md-3">

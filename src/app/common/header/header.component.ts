@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { filter, map, mergeMap,catchError } from 'rxjs/operators';
+import { CommonService } from '../common.service';
 
 @Component({
   selector: 'najah-header',
@@ -10,7 +11,9 @@ import { filter, map, mergeMap,catchError } from 'rxjs/operators';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public router:Router,private titleService:Title,private activatedRoute: ActivatedRoute) {
+  public industries:any[]=[];
+  constructor(public router:Router,private titleService:Title,private activatedRoute: ActivatedRoute,
+    private commonService:CommonService) {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
       map(() => this.activatedRoute),
@@ -27,6 +30,20 @@ export class HeaderComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.getAllIndustriesHeader();
+  }
+
+  getAllIndustriesHeader(){
+    this.commonService.getHeaders().subscribe(d=>{
+      this.industries=d;
+    })
+  }
+
+  routeToIndustry(industry ? : any){
+    if(industry)
+    this.router.navigate(["/industries",industry.url])
+    else
+    this.router.navigateByUrl("/industries")
   }
 
 }

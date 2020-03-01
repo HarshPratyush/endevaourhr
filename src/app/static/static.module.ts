@@ -11,18 +11,19 @@ import {MatIconModule} from '@angular/material/icon';
 import { ServiceComponent } from './service/service.component';
 import { IndustrySelectorComponent } from './industry-selector/industry-selector.component';
 import { SideNavDetailsComponent } from './side-nav-details/side-nav-details.component';
+import { BreadCrumbComponent } from './bread-crumb/bread-crumb.component';
 
 
 @NgModule({
   declarations: [HomeComponent, ContactUsComponent, 
     AboutUsComponent, UnderConstructionComponent,
-     ServiceComponent,IndustrySelectorComponent,SideNavDetailsComponent],
+     ServiceComponent,IndustrySelectorComponent,SideNavDetailsComponent, BreadCrumbComponent],
   imports: [
     CommonModule,
     StaticRoutingModule,
     CarouselModule,
     MatIconModule
   ],
-  exports:[SideNavDetailsComponent]
+  exports:[SideNavDetailsComponent,BreadCrumbComponent]
 })
 export class StaticModule { }

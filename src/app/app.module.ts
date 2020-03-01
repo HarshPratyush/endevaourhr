@@ -14,8 +14,7 @@ import { ShareButtonsModule } from '@ngx-share/buttons';
 import { SocialShareComponent } from './common/social-share/social-share.component';
 import { HttpInterceptorService } from './common/http-interceptor.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { SideNavDetailsComponent } from './static/side-nav-details/side-nav-details.component';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -32,7 +31,8 @@ import { SideNavDetailsComponent } from './static/side-nav-details/side-nav-deta
     LoadingBarRouterModule,
     LoadingBarModule,
     StaticModule,
-    ShareButtonsModule
+    ShareButtonsModule,
+    NgxSpinnerModule
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:HttpInterceptorService,multi:true}],
   bootstrap: [AppComponent]
