@@ -20,4 +20,8 @@ export class CommonService {
   getSingleIndustry(industryName:string):Observable<any>{
     return this.http.get(AppConstants.GET_SINGLE_INDUSTRIES);
   }
+
+  getAllJobs(){
+    return this.http.get(AppConstants.GET_ALL_JOBS);
+  }
 }

@@ -1,20 +1,55 @@
-<footer id="foot" class="footer">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-6 col-sm-6 copy-right">
-			
-				<p>© 2020 NAJAH HR</p> 
-			</div>
-			
-			<div class="col-md-6     col-sm-6 social-all-links ">
-				<div class="social text-right ">
-						<p>
-							<span class="footerfont">Developed  by </span><a  target="_blank" class="text_deco_none"><span >Harsh</span></a>
-						</p>
-				
-				</div>
-			</div>
-
+<footer class="mainfooter" role="contentinfo">
+	<div class="footer-middle">
+	<div class="container">
+	  <div class="row">
+		<div class="col-md-3 col-sm-6">
+		  <!--Column1-->
+		  <div class="footer-pad">
+			<h4>Site Map</h4>
+			<ul class="list-unstyled">
+			  <li><a routerLink="">Home</a></li>
+			  <li><a routerLink="about-us">About Us</a></li>
+			  <li><a routerLink="contact-us">Contact Directory</a></li>
+			  <li><a routerLink="service">Services</a></li>
+			  <li><a routerLink="jobseeker">Job Seeker</a></li>
+			  <li><a routerLink="under-construction">Employer</a></li>
+			</ul>
+		  </div>
 		</div>
+		<div class="col-md-3 col-sm-6">
+		  <!--Column1-->
+		  <div class="footer-pad">
+			<h4>Our Specialization</h4>
+			<ul class="list-unstyled">
+			  <li *ngFor="let item of specialization | slice:0:11; let i=index" (click)="routeToIndustry(item)"><a >{{item.name}}</a></li>
+			</ul>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-6">
+		  <!--Column1-->
+		  <div class="footer-pad">
+			<h4>Some More Industries</h4>
+			<ul class="list-unstyled">
+				<li *ngFor="let item of specialization | slice:12:specialization.length; let i=index" (click)="routeToIndustry(item)"><a >{{item.name}}</a></li>
+			</ul>
+		  </div>
+		</div>
+		  <div class="col-md-2 offset-md-1">
+			  <h4>Follow Us</h4>
+			  <ul class="social-network social-circle">
+			   <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+			   <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+			   <li><a href="#" class="icoTwitter" title="Linkedin"><i class="fa fa-twitter"></i></a></li>
+			  </ul>				
+		  </div>
+	  </div>
+	  <div class="row">
+		  <div class="col-md-12 copy">
+			  <p class="text-center">&copy; Copyright 2020 - Najah Human Resources.  All rights reserved.</p>
+		  </div>
+	  </div>
+  
+  
 	</div>
-</footer>
+	</div>
+  </footer>

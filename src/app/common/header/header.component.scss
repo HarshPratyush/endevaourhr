@@ -4,6 +4,11 @@ $primary-color:#3f51b5;
     background-color: #5b6670;
 }
 
+nav{
+    background: -webkit-linear-gradient(59deg,  #16222A,#3A6073);
+    background: linear-gradient(59deg, #16222A,#3A6073) ;
+}
+
 .navbar-nav .nav-link{
     color: #ffffff !important;
     font-size: 14px;
@@ -34,8 +39,11 @@ $primary-color:#3f51b5;
 
  .dropdown-item{
     padding: 0.55rem 2rem;
+    cursor: pointer;
  }
-
+.nav-item{
+    cursor: pointer;
+}
 .logo{
     width: 64px;;
     padding-top: 5px;

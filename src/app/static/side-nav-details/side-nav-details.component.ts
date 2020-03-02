@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Router } from '@angular/router';
+import { CommonService } from 'src/app/common/common.service';
 declare var $:any;
 @Component({
   selector: 'najah-side-nav-details',
@@ -8,7 +10,9 @@ declare var $:any;
 })
 export class SideNavDetailsComponent implements OnInit {
 
-  constructor() { }
+  jobs:any;
+  jobTitle:any[]=[];
+  constructor(private _router:Router,private commonService:CommonService) { }
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -36,6 +40,7 @@ export class SideNavDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getAllJobs();
     let fixmeTop = $('.client-says').offset().top;       // get initial position of the element
 
 $(window).scroll(function() {                  // assign scroll event listener
@@ -57,4 +62,16 @@ $(window).scroll(function() {                  // assign scroll event listener
 });
   }
 
+  routeByUrl(url:string){
+    this._router.navigateByUrl(url)
+  }
+
+  getAllJobs(){
+    this.commonService.getAllJobs().subscribe(d=>{
+      this.jobs=d;
+      this.jobTitle=Object.keys(this.jobs)
+    })
+  }
+
+  
 }

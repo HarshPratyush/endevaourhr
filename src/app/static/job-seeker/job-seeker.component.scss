@@ -1,0 +1,23 @@
+form{
+    margin: 30px;
+}
+
+
+.danger{
+    background-color: #d81b12;
+    border-color: #d81b12;
+}
+
+.danger:hover,.danger:active,.danger::selection,.danger:focus{
+    background-color: #7b0e09;
+    border-color: #7b0e09;
+}
+
+.align-center{
+    text-align: center;
+}
+
+.save{
+    background-color: #118b37;
+    border-color: #118b37;
+}

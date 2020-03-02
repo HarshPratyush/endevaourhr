@@ -12,18 +12,32 @@ import { ServiceComponent } from './service/service.component';
 import { IndustrySelectorComponent } from './industry-selector/industry-selector.component';
 import { SideNavDetailsComponent } from './side-nav-details/side-nav-details.component';
 import { BreadCrumbComponent } from './bread-crumb/bread-crumb.component';
-
+import { JobSeekerComponent } from './job-seeker/job-seeker.component';
+import {  ReactiveFormsModule } from '@angular/forms';
+import { MatCommonModule, MatNativeDateModule } from '@angular/material/core';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [HomeComponent, ContactUsComponent, 
     AboutUsComponent, UnderConstructionComponent,
-     ServiceComponent,IndustrySelectorComponent,SideNavDetailsComponent, BreadCrumbComponent],
+     ServiceComponent,IndustrySelectorComponent,SideNavDetailsComponent, BreadCrumbComponent,JobSeekerComponent],
   imports: [
     CommonModule,
     StaticRoutingModule,
     CarouselModule,
-    MatIconModule
+    MatIconModule,
+    MatCommonModule,
+    MatInputModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  exports:[SideNavDetailsComponent,BreadCrumbComponent]
+  exports:[SideNavDetailsComponent,BreadCrumbComponent],
+  providers:[MatDatepickerModule]
 })
 export class StaticModule { }

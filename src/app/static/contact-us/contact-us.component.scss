@@ -9,3 +9,14 @@
     vertical-align: top;
     padding-right: 10px;
 }
+
+iframe{
+    width: 60vw;
+}
+
+
+@media screen and (max-width: 600px) {
+   iframe {
+        width: 90vw;
+    }
+}

@@ -1,0 +1,22 @@
+[
+    {
+        "url":"computer",
+        "name":"Computer Science"
+    },
+    {
+        "url":"engineering",
+        "name":"Engineering/Heavy Equipment"
+    },
+    {
+        "url":"law",
+        "name":"Law / Consultancy"
+    },
+    {
+        "url":"garments",
+        "name":"Garments/FMCG"
+    },
+    {
+        "url":"oli",
+        "name":"Oil & Gas"
+    }
+]
