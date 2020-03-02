@@ -1,4 +1,54 @@
-<!-- <najah-bread-crumb *ngIf="industry"[pageName]="industry.name" [breadCrumb]='breadCrumb'></najah-bread-crumb> -->
-<div>
-    <img class="img-fluid" src="./assets/images/under-construction.png">
+<najah-bread-crumb *ngIf="industry" [pageName]="industry.name" [breadCrumb]='breadCrumb'></najah-bread-crumb>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-9" *ngIf="industry">
+            <img class="industry-img" align="left" [src]="industry.image">
+            <p *ngFor="let desc of descriptionBreakdown">
+                {{desc}}
+            </p>
+
+                    <div class="division">
+                        <span class="division-title">Our {{industry.name}} can provide candidates for a number of job
+                            openings like: –</span>
+                        <ul>
+                            <li *ngFor="let div of industry.division">{{div}}</li>
+                        </ul>
+                    </div>
+
+
+                    <div class="col-md-12 row" *ngIf="industry.availablePost.length">
+                        <table class="table table-bordered ">
+                            <thead class="thead-dark">
+                              <tr>
+                                <th scope="col">S. No.</th>
+                                <th scope="col">Number of Position</th>
+                                <th scope="col">Location</th>
+                                <th scope="col">Division</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let job of industry.availablePost;let i=index">
+                                <th scope="row">{{i+1}}</th>
+                                <td>{{job.postions}}</td>
+                                <td>{{job.locations}}</td>
+                                <td>{{job.division}}</td>
+                              </tr>
+                              </tbody>
+                              </table>
+                    </div>
+
+        <div class="row col-md-12 ">
+            <div class="col-md-6 padding-zero">
+            <button type="button" class="btn btn-info margin-20 float-left" (click)="routeToIndustry(prev)" *ngIf="prev"><i class=" fa fa-arrow-left"></i> {{prev.name}}</button>
+        </div>
+            <div class="col-md-6 padding-zero">
+            <button type="button" class="btn btn-info margin-20 float-right" (click)="routeToIndustry(next)" *ngIf="next"><i class=" fa fa-arrow-right"></i> {{next.name}}</button>
+        </div>
+        </div>
+        </div>
+
+        <div class="col-md-3">
+            <najah-side-nav-details></najah-side-nav-details>
+        </div>
     </div>
+</div>

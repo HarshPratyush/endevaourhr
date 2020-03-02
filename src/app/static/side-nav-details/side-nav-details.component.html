@@ -1,5 +1,5 @@
 <div class="client-says">
-    <img  class="img-fluid" src="./assets/images/looking-for-workers.jpg">
+    <img  class="img-fluid" src="./assets/images/looking-for-workers.jpg" (click)="routeByUrl('under-construction')">
 
     <div>
         <span>What Client Says</span>
@@ -31,4 +31,38 @@
           </owl-carousel-o>
 
     </div>
+
+    <div>
+        <span>Looking For Job</span>
+    <hr class="divider">
+    <img  class="img-fluid" src="./assets/images/job-apply.jpg" (click)="routeByUrl('jobseeker')">
+    </div>
+
+    <div>
+        <span>Latest Job</span>
+    <hr class="divider">
+    <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide  *ngFor="let title of jobTitle">
+            <span class="job-title">{{title}}</span>
+            <table class="table table-bordered ">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Number of Position</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Division</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let job of jobs[title];let i=index">
+                    <td>{{job.postions}}</td>
+                    <td>{{job.locations}}</td>
+                    <td>{{job.division}}</td>
+                  </tr>
+                  </tbody>
+                  </table>
+        </ng-template>   
+
+      </owl-carousel-o>
+    </div>
+
 </div>

@@ -1,0 +1,16 @@
+<div class="container-fluid margin-top-90">
+    <div class="row breadcrumb ">
+    <img class="img-fluid" *ngIf="imageUrl" [src]='imageUrl'>
+    <div class="col-md-6 ">
+        <span class="page-name">{{pageName}}</span>
+    </div>
+    <div class="col-md-6">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb  float-right">
+              <li class="breadcrumb-item" [ngClass]="{'active': crumb.isLast}" *ngFor="let crumb of breadCrumb"><a [routerLink]=
+                "crumb.url">{{crumb.name}}</a></li>
+            </ol>
+          </nav>
+    </div>
+    </div>
+ </div>

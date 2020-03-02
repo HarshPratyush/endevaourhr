@@ -1,0 +1,24 @@
+img{
+    width: 100%;
+    height: 355px;
+}
+
+.active a{
+    color: grey;
+    pointer-events: none;
+}
+
+
+.breadcrumb{
+    border-radius: 0px;
+}
+
+.page-name{
+    font-size: 30px;
+    font-weight: 200;
+    color: #3d7676;
+}
+
+.breadcrumb > li + li:before {
+    content: ">";
+}

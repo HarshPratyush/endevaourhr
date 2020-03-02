@@ -6,6 +6,7 @@
 @import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 @import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
+
 $primary-color:#389599;
 $primary-color-hover:#447679;
 $breadcrumb-divider: quote(">");
@@ -17,6 +18,12 @@ font-family: cursive;}
 .container-fluid {
     width: 90%;
     padding: 0;
+    font-weight: 100;
+    color: #645f5f;
+}
+
+.margin-top-90{
+    margin-top: 90px;
 }
 
 .sb-button, .sb-group {
@@ -56,3 +63,18 @@ font-family: cursive;}
     border-color:$primary-color-hover !important;
 }
 
+img{
+    cursor: pointer;
+}
+
+.width-100{
+width: 100%;
+}
+
+
+img.industry-img{
+    height: 150px;
+    min-height: 150px;
+    margin-right: 20px;
+    width: 230px;
+}

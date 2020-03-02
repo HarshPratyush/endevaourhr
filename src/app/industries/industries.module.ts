@@ -9,6 +9,7 @@ import { SideNavDetailsComponent } from '../static/side-nav-details/side-nav-det
 import { StaticModule } from '../static/static.module';
 
 
+
 @NgModule({
   declarations: [IndustriesMainComponent, IndustryComponent, SingleIndustryComponent],
   imports: [
