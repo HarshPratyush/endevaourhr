@@ -121,4 +121,8 @@ footer {
   .footer-pad li{
       cursor: pointer;
   }
+
+  .footer-pad h4::first-letter{
+    color: #389599 !important;
+  }
   
