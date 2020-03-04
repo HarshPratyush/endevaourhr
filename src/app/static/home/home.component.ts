@@ -11,7 +11,7 @@ import { element } from 'protractor';
 export class HomeComponent implements OnInit {
 
 
-  divArray:string[]=['customer','jobs','resume'];
+  diletray:string[]=['customer','jobs','resume'];
   constructor() { 
 
   }
@@ -22,37 +22,69 @@ export class HomeComponent implements OnInit {
     let i =0;
 
     secondsCounter.subscribe(n =>{
-      document.getElementById(this.divArray[i]).classList.remove('colored');
-      if(i==this.divArray.length-1){
+      document.getElementById(this.diletray[i]).classList.remove('colored');
+      if(i==this.diletray.length-1){
         i=0;
       }
       else{
         i=i+1;
       }
-      let a = this.divArray[i];
+      let a = this.diletray[i];
       document.getElementById(a).classList.add('colored');
     });
 
+    // let  a = 0;
 
-    $('.counter').each(function () {
-      $(this).prop('Counter',0).animate({
-      Counter: $(this).text()
-      }, {
-      duration: 5000,
-      easing: 'swing',
-      step: function (now) {
-      $(this).text(Math.ceil(now));
-      }
-      });
-      });
+    // $(window).scroll(function() {
 
-      $('.swing-counter').on('inview', function (event, visible) {
-        if (visible == true) {
-          alert("reached")
-        } else {
-          // element has gone out of viewport
-        }
-      });
+    // let oTop = $('#counter').offset().top - window.innerHeight;
+    // if (a == 0 && $(window).scrollTop() > oTop) {
+    // $('.counter').each(function () {
+    //   $(this).prop('Counter',0).animate({
+    //   Counter: $(this).text()
+    //   }, {
+    //   duration: 5000,
+    //   easing: 'swing',
+    //   step: function (now) {
+    //   $(this).text(Math.ceil(now));
+    //   }
+    //   });
+    //   });
+    // }});
+
+    let a = 0;
+$(window).scroll(function() {
+
+  let oTop = $('#counter').offset().top - window.innerHeight;
+  if (a == 0 && $(window).scrollTop() > oTop) {
+    $('.counter').each(function() {
+      let $this = $(this),
+        countTo = $this.attr('data-count');
+      $({
+        countNum: $this.text()
+      }).animate({
+          countNum: countTo
+        },
+
+        {
+
+          duration: 2000,
+          easing: 'swing',
+          step: function() {
+            $this.text(Math.floor(this.countNum));
+          },
+          complete: function() {
+            $this.text(this.countNum);
+            //alert('finished');
+          }
+
+        });
+    });
+    a = 1;
+  }
+
+});
+
   }
 
 }
