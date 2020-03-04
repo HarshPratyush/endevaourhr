@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { filter, map, mergeMap,catchError } from 'rxjs/operators';
 import { CommonService } from '../common.service';
+declare var $:any;
 
 @Component({
   selector: 'najah-header',
@@ -31,6 +32,20 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.getAllIndustriesHeader();
+
+    $(function(){
+      $(".dropdown").hover(            
+              function() {
+                  $('.dropdown-menu', this).stop( true, true ).fadeIn("fast");
+                  $(this).toggleClass('open');
+                  $('b', this).toggleClass("caret caret-up");                
+              },
+              function() {
+                  $('.dropdown-menu', this).stop( true, true ).fadeOut("fast");
+                  $(this).toggleClass('open');
+                  $('b', this).toggleClass("caret caret-up");                
+              });
+      });
   }
 
   getAllIndustriesHeader(){

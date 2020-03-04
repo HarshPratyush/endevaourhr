@@ -1,7 +1,7 @@
 <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
           
-          <div  class="left-container">
+          <div  class="left-container" routerLink="">
             <a><img  class="logo" src="assets/images/logo.jpg"></a><h1  class="heading-title">
             NAJAH-HR </h1></div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" 
@@ -25,8 +25,8 @@
               <li class="nav-item" [ngClass]="{'active': router.url=='/jobseeker'}">
                 <a class="nav-link" mdbRippleRadius routerLink="jobseeker">Job Seeker</a>
               </li>
-              <li class="nav-item" [ngClass]="{'active': router.url=='/contact-us1'}">
-                <a class="nav-link" mdbRippleRadius routerLink="under-construction">Employer</a>
+              <li class="nav-item" [ngClass]="{'active': router.url=='/employer'}">
+                <a class="nav-link" mdbRippleRadius routerLink="employer">Employer</a>
               </li>
               <li class="nav-item dropdown" [ngClass]="{'active': router.url=='/industries'}">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"

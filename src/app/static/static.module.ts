@@ -19,11 +19,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { FileDragDirective } from './file-drag.directive';
+import { EmployerComponent } from './employer/employer.component';
 
 @NgModule({
   declarations: [HomeComponent, ContactUsComponent, 
     AboutUsComponent, UnderConstructionComponent,
-     ServiceComponent,IndustrySelectorComponent,SideNavDetailsComponent, BreadCrumbComponent,JobSeekerComponent],
+     ServiceComponent,IndustrySelectorComponent,SideNavDetailsComponent, BreadCrumbComponent,JobSeekerComponent, FileDragDirective, EmployerComponent],
   imports: [
     CommonModule,
     StaticRoutingModule,

@@ -6,6 +6,7 @@ import { ContactUsComponent } from './static/contact-us/contact-us.component';
 import { UnderConstructionComponent } from './static/under-construction/under-construction.component';
 import { ServiceComponent } from './static/service/service.component';
 import { JobSeekerComponent } from './static/job-seeker/job-seeker.component';
+import { EmployerComponent } from './static/employer/employer.component';
 
 
 const routes: Routes = [{
@@ -46,7 +47,16 @@ const routes: Routes = [{
     component:JobSeekerComponent,
     pathMatch:'full',
     data:{title : 'Job Seeker' } 
-  }];
+  },
+  {
+    
+    path:'employer',
+    component:EmployerComponent,
+    pathMatch:'full',
+    data:{title : 'Employer' } 
+  }
+  
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes,{scrollPositionRestoration: 'enabled'})],

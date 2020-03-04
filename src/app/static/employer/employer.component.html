@@ -1,0 +1,117 @@
+<najah-bread-crumb [imageUrl]="'assets/images/employer.png'" [pageName]="'Employer'" [breadCrumb]="breadCrumb">
+</najah-bread-crumb>
+
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-md-9 row padding">
+        
+                      <form class="width-100" [formGroup]="employerForm" (ngSubmit)="employerForm.valid?submitForm():''">
+                        <mat-card>
+                            <mat-card-title>
+                                <div class="align-center">Your Requirments</div>
+                                <hr class="divider">
+                            </mat-card-title>
+                            <mat-card-content>
+
+        <div class="row">
+
+          <div class="col-md-12">
+            <mat-form-field class="width-100">
+              <mat-label>What's Your Good Name</mat-label>
+              <input matInput formControlName="name" required placeholder="Mr. John Binsley">
+              <mat-error *ngIf="employerForm.get('name').hasError('required')">This feild is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-12">
+            <mat-form-field class="width-100">
+              <mat-label>Official Email-Id</mat-label>
+              <input matInput formControlName="email" required placeholder="john@najahhr.com">
+              <mat-error *ngIf="employerForm.get('email').hasError('required')">This feild is required</mat-error>
+              <mat-error *ngIf="employerForm.get('email').hasError('email')">Please provide correct email-id
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+
+
+
+
+
+          <div class="col-md-6">
+            <mat-form-field class="width-100">
+              <mat-label>No of openings</mat-label>
+              <input matInput type="number" formControlName="numberOfRequirment" placeholder="20" required>
+              <mat-error *ngIf="employerForm.get('numberOfRequirment').hasError('required')">This feild is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field class="width-100">
+              <mat-label>Company Name</mat-label>
+              <input matInput formControlName="companyname" placeholder="Najah HR" required>
+              <mat-error *ngIf="employerForm.get('companyname').hasError('required')">This feild is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field class="width-100">
+              <mat-label>Industry</mat-label>
+              <mat-select formControlName="industry" required>
+                <mat-option *ngFor="let industry of specialization" [value]="industry">{{industry.name}}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="employerForm.get('industry').hasError('required')">This feild is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          
+          <div class="col-md-6">
+            <mat-form-field class="width-100">
+              <mat-label>Division</mat-label>
+              <mat-select formControlName="divison" required>
+                <mat-option *ngFor="let industry of specialization" [value]="industry">{{industry.name}}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="employerForm.get('divison').hasError('required')">This feild is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          
+
+
+          <div class="col-md-12">
+            <mat-form-field class="width-100">
+              <mat-label>Subject</mat-label>
+              <input matInput formControlName="subject" placeholder="I am applying for">
+              <mat-error *ngIf="employerForm.get('subject').hasError('required')">This feild is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-12">
+            <mat-form-field class="width-100">
+              <mat-label>What's Your Requirment</mat-label>
+              <textarea matInput formControlName="message" required
+                placeholder="Ex. I have 10 years of experince..."></textarea>
+              <mat-error *ngIf="employerForm.get('message').hasError('required')">This feild is required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col-md-12 row">
+          <div class="col-md-2 offset-md-8">
+            <button type="save" class="btn btn-info margin-20 save"><i class=" fa fa-paper-plane"></i> Send</button>
+          </div>
+          <div class="col-md-2">
+            <button type="reset" class="btn btn-info margin-20 danger"><i class=" fa fa-times-circle"></i>
+              Reset</button>
+          </div>
+        </div>
+    </mat-card-content>
+
+</mat-card>
+      </form>
+    </div>
+    <div class="col-md-3">
+      <najah-side-nav-details></najah-side-nav-details>
+    </div>
+  </div>
+</div>
