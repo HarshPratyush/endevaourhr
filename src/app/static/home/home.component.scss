@@ -198,3 +198,10 @@ img.first{
 .four{
     margin-top: 10px;
 }
+
+@media screen and (max-width: 760px) {
+.second-featurette{
+    display: flex;
+    flex-direction: column-reverse;
+}
+}
