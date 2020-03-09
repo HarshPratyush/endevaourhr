@@ -9,9 +9,15 @@ fullScreen = "true"
 ><p style="color: white" > Loading... </p>
 </ngx-spinner>
 <div style="position: relative;" class="main-content" >
-    <div  class="floating-sidebar position-left" style="top: 277px;">
+    <div  class="floating-sidebar position-left">
   <najah-social-share></najah-social-share>
   </div>
+
+  <div  class="floating-sidebar grid position-right">
+    <a href="mailto:info@najahhr.com" target="_blank"><button mat-mini-fab><mat-icon>mail_outline</mat-icon></button></a>
+    <a href="tel:+971505824107"> <button mat-mini-fab><mat-icon>call</mat-icon></button></a>
+    </div>
+
     <router-outlet></router-outlet>
 </div>
 <najah-footer></najah-footer>

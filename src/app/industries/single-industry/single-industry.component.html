@@ -37,12 +37,12 @@
                               </table>
                     </div>
 
-        <div class="row col-md-12 ">
-            <div class="col-md-6 padding-zero">
-            <button type="button" class="btn btn-info margin-20 float-left" (click)="routeToIndustry(prev)" *ngIf="prev"><i class=" fa fa-arrow-left"></i> {{prev.name}}</button>
+        <div class="row col-md-12 navigate-button">
+            <div class="col-md-6 col-sm-6 padding-zero margin-bottom-30 text-center">
+            <button type="button" class="btn btn-info  float-sm-left " (click)="routeToIndustry(prev)" *ngIf="prev"><i class=" fa fa-arrow-left"></i> {{prev.name}}</button>
         </div>
-            <div class="col-md-6 padding-zero">
-            <button type="button" class="btn btn-info margin-20 float-right" (click)="routeToIndustry(next)" *ngIf="next"><i class=" fa fa-arrow-right"></i> {{next.name}}</button>
+            <div class="col-md-6 col-sm-6 padding-zero margin-bottom-30  text-center">
+            <button type="button" class="btn btn-info  float-sm-right " (click)="routeToIndustry(next)" *ngIf="next"><i class=" fa fa-arrow-right"></i> {{next.name}}</button>
         </div>
         </div>
         </div>

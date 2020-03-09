@@ -5,7 +5,7 @@ $primary-color:#3f51b5;
 }
 
 .carousel-item .carousel-caption{
-    color: #333333 !important;
+    color: #fff !important;
 }
 
 .carousel-item img{
@@ -66,7 +66,6 @@ $primary-color:#3f51b5;
 }
 
 .headings{
-        width: 100%;
         padding-right: 15px;
         padding-left: 15px;
         margin-right: auto;
@@ -83,8 +82,126 @@ $primary-color:#3f51b5;
     margin-left: -15px;
 }
 
+img.first{
+    border:1px solid black;
+}
+
 .headings .col-lg-4 {
     margin-bottom: 1.5rem;
     text-align: center;
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 65px;
+  width: 65px;
+  background-color: white;
+  background-size: 100%, 100%;
+  border-radius: 0%;
+  border: 2px solid white;
+  border-bottom: none;
+  background-image: none;
+}
+
+.carousel-control-prev,
+.carousel-control-next{
+      top: 87%;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 40px;
+  color: #3A6073;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 40px;
+  color: #3A6073;
+}
+
+.container-fluid .headings{
+    width: 95%;
+}
+
+.name{
+    font-weight: 200;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #389599 !important;
+}
+
+.description{
+    padding: 0px 20px 20px 10px;;
+}
+
+.container {
+    margin-top: 100px
+}
+
+.counter-box {
+    display: block;
+    background: #f6f6f6;
+    padding: 40px 20px 37px;
+    text-align: center
+}
+
+.counter-box p {
+    margin: 5px 0 0;
+    padding: 0;
+    color: #909090;
+    font-size: 18px;
+    font-weight: 500
+}
+
+.counter-box i {
+    font-size: 60px;
+    margin: 0 0 15px;
+    color: #d2d2d2
+}
+
+.counter {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: #666;
+    line-height: 28px
+}
+
+.counter-box.colored {
+    background: #3acf87
+}
+
+.counter-box.colored p,
+.counter-box.colored i,
+.counter-box.colored .counter {
+    color: #fff
+}
+
+.services-grid{
+    background-color: #353D4A;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+
+
+.services-button{
+    border-radius: 40px !important;
+    background-color: transparent;
+}
+
+.four{
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 760px) {
+.second-featurette{
+    display: flex;
+    flex-direction: column-reverse;
+}
+}
