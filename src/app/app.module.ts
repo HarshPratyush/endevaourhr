@@ -15,8 +15,9 @@ import { SocialShareComponent } from './common/social-share/social-share.compone
 import { HttpInterceptorService } from './common/http-interceptor.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
-
+import {MatButtonModule} from '@angular/material/button';
 import { ToastrModule } from 'ngx-toastr';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,8 @@ import { ToastrModule } from 'ngx-toastr';
     StaticModule,
     ShareButtonsModule,
     NgxSpinnerModule,
+    MatButtonModule,
+    MatIconModule,
     ToastrModule.forRoot()
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:HttpInterceptorService,multi:true}],

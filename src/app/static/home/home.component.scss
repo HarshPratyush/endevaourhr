@@ -121,13 +121,15 @@ img.first{
   color: #3A6073;
 }
 
+.container-fluid .headings{
+    width: 95%;
+}
+
 .name{
     font-weight: 200;
     font-size: 20px;
     margin-bottom: 10px;
-    background: -webkit-linear-gradient(59deg,  #3A6073,#16222A,);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #389599 !important;
 }
 
 .description{
@@ -186,9 +188,7 @@ img.first{
     margin-right: 0px;
 }
 
-.margin-top-40{
-    margin-top: 40px;
-}
+
 
 .services-button{
     border-radius: 40px !important;

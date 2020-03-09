@@ -1,42 +1,57 @@
-<najah-bread-crumb [pageName]="'Contact Us'" [breadCrumb]='breadCrumb'
- [imageUrl]="'assets/images/contact-us-1.jpg'"></najah-bread-crumb>
+<najah-bread-crumb [pageName]="'Contact Us'" [breadCrumb]='breadCrumb' [imageUrl]="'assets/images/contact-us-1.jpg'">
+</najah-bread-crumb>
 
 <div class="container-fluid">
-        <div class="row ">
-            <div class="col-md-9">
-                    <p class="contact-us">
-                        <strong>Najah Human Resources Consultancy</strong><br>
-                        Suite # 178, Damas Tower (Burj 2000),<br>
-                        Sharjah, UAE<br>
-                        <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle-thin fa-stack-2x"></i>
-                                <i class="fa fa-phone fa-stack-1x"></i></span>
-                        <a href="tel:+971505824107"> 
-                               &nbsp; +971 50 582 4107<br></a>
-                               
-                               <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle-thin fa-stack-2x"></i>
-                                    <i class="fa fa-phone fa-stack-1x"></i></span>
-                        <a href="tel:+97165639412">&nbsp; +971 65 63 9142<br></a>
+    <div class="row ">
+        <div class="col-md-9">
+            <div class="contact-us margin-bottom-30">
+                
+                <ul class="location">
+                    <li>
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle-thin fa-stack-2x"></i>
+                    <i class="fa fa-map-marker fa-stack-1x"></i></span>
+                </li>
+                <li class="margin-left-16">
+                <a (click)="redirectToMap()">
+                <strong>Najah Human Resources Consultancy</strong><br>
+                    Office # 178,Floor #13<br>
+                    Burjuman Buisness Tower, 28a Street, UAE<br>
+                </a>
+            </li>
+            </ul>
 
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle-thin fa-stack-2x"></i>
-                            <i class="fa fa-phone fa-stack-1x"></i></span>
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-phone fa-stack-1x"></i></span>
+                <a href="tel:+971505824107">
+                    &nbsp; +971 50 582 4107<br></a>
+
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle-thin fa-stack-2x"></i>
+                    <i class="fa fa-phone fa-stack-1x"></i></span>
+                <a href="tel:+97165639412">&nbsp; +971 65 63 9142<br></a>
+
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle-thin fa-stack-2x"></i>
+                    <i class="fa fa-phone fa-stack-1x"></i></span>
                 <a href="tel:+919939243299">&nbsp; +91 99392 43299<br></a>
 
-                        <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle-thin fa-stack-2x"></i>
-                                <i class="fa fa-envelope fa-stack-1x"></i></span>
-                        <a href="mailto:info@najahhr.com" target="_blank">&nbsp; info@najahhr.com</a> <br>
-                        <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle-thin fa-stack-2x"></i>
-                        <i class="fa fa-globe fa-stack-1x"></i></span>
-                        <a href="https://najahhr.web.app/" target="_blank">&nbsp;  https://najahhr.web.app/</a></p>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28913.75479243656!2d55.191083568948216!3d25.060553573417234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6c36babd2c79%3A0x675853b2595d1a65!2sJumeirah%20Village%20Circle%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1575831456733!5m2!1sen!2sin" 
-                             height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-                    </div>
-                    <div class="col-md-3">
-                        <najah-side-nav-details></najah-side-nav-details>
-                    </div>
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle-thin fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x"></i></span>
+                <a href="mailto:info@najahhr.com" target="_blank">&nbsp; info@najahhr.com</a> <br>
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle-thin fa-stack-2x"></i>
+                    <i class="fa fa-globe fa-stack-1x"></i></span>
+                <a href="https://najahhr.web.app/" target="_blank">&nbsp; https://najahhr.web.app/</a>
                 </div>
-            </div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14434.076165237175!2d55.3021965!3d25.2531195!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x502d0604cd2571b6!2sBurJuman!5e0!3m2!1sen!2sin!4v1583777442097!5m2!1sen!2sin"
+                height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+        <div class="col-md-3">
+            <najah-side-nav-details></najah-side-nav-details>
+        </div>
+    </div>
+</div>

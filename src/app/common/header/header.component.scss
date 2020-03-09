@@ -7,6 +7,7 @@ $primary-color:#3f51b5;
 nav{
     background: -webkit-linear-gradient(59deg,  #16222A,#3A6073);
     background: linear-gradient(59deg, #16222A,#3A6073) ;
+    // margin-top: 22px;
 }
 
 .navbar-nav .nav-link{
@@ -40,6 +41,7 @@ nav{
  .dropdown-item{
     padding: 0.55rem 2rem;
     cursor: pointer;
+    white-space: pre-wrap;
  }
 .nav-item{
     cursor: pointer;
@@ -51,9 +53,9 @@ nav{
 
 .heading-title{
     color: #fff;
-    margin: 10px 0 0 18px;
-    font-size: 24px;
-    font-style: italic;
+    // margin: 10px 0 0 18px;
+    // font-size: 24px;
+    // font-style: italic;
 }
 
 .left-container{
@@ -69,3 +71,36 @@ nav{
     color: #389599;
     background-color: #fff;
 }
+
+// .top-banner{
+//     text-align: right;
+// }
+
+.top-header{
+    background: -webkit-linear-gradient(59deg, #51656f, #16222A);
+    background: linear-gradient(59deg, #51656f, #16222A);
+    position: fixed;
+    z-index: 999;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+    top: 0;
+}
+
+.contact{
+    list-style: none;
+    margin-right: 11px;
+    display: -ms-flexbox;
+    display: flex;
+    float: right;
+}
+
+.top-banner a{
+    color: #ffffff !important;
+
+}
+
+
+ 

@@ -1,4 +1,4 @@
-.floating-sidebar.dpsp-position-left {
+.position-left {
     left: 0;
 }
 
@@ -20,6 +20,18 @@
 
 .main-content{
     min-height: 100vh
+}
+
+.position-right{
+    right: 0;
+}
+
+.floating-sidebar.grid{
+    display: grid;
+}
+
+.floating-sidebar.grid button{
+    margin-top: 5px;
 }
 
 @media screen and (max-width: 600px) {

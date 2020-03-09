@@ -1,7 +1,7 @@
-.padding-zero{
-    padding: 0px;
-}
 
-.margin-bottom-30{
-    margin-bottom: 30px;
-}
+
+@media (max-width: 575px) {
+    .navigate-button button {
+            width: 100%;
+     } 
+  }

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 declare var $:any;
-import { interval } from 'rxjs';
+import { interval, Subscription } from 'rxjs';
 import { element } from 'protractor';
 
 @Component({
@@ -8,12 +8,18 @@ import { element } from 'protractor';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit,OnDestroy {
 
+  private secondCounterSubscription: Subscription;
 
   diletray:string[]=['customer','jobs','resume'];
   constructor() { 
 
+  }
+
+  ngOnDestroy(){
+    this.secondCounterSubscription.unsubscribe();
+    $(window).unbind('scroll');
   }
 
   ngOnInit() {
@@ -21,7 +27,7 @@ export class HomeComponent implements OnInit {
     const secondsCounter = interval(5000);
     let i =0;
 
-    secondsCounter.subscribe(n =>{
+    this.secondCounterSubscription = secondsCounter.subscribe(n =>{
       document.getElementById(this.diletray[i]).classList.remove('colored');
       if(i==this.diletray.length-1){
         i=0;
