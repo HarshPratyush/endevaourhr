@@ -41,7 +41,12 @@ const routes: Routes = [{
   },{
     path:'industries',
     loadChildren:() => import('./industries/industries.module').then(m => m.IndustriesModule)
-  },{
+  }
+  ,{
+    path:'admin',
+    loadChildren:() => import('./admin/admin.module').then(m => m.AdminModule)
+  }
+  ,{
     
     path:'jobseeker',
     component:JobSeekerComponent,

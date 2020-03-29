@@ -24,9 +24,9 @@
           <div class="col-md-12">
             <mat-form-field class="width-100">
               <mat-label>Where we can drop a mail to you</mat-label>
-              <input matInput formControlName="email" required placeholder="john@najahhr.com">
-              <mat-error *ngIf="jobSeekerForm.get('email').hasError('required')">This feild is required</mat-error>
-              <mat-error *ngIf="jobSeekerForm.get('email').hasError('email')">Please provide correct email-id
+              <input matInput formControlName="emailId" required placeholder="john@najahhr.com">
+              <mat-error *ngIf="jobSeekerForm.get('emailId').hasError('required')">This feild is required</mat-error>
+              <mat-error *ngIf="jobSeekerForm.get('emailId').hasError('email')">Please provide correct email-id
               </mat-error>
             </mat-form-field>
           </div>
@@ -44,7 +44,7 @@
               <label>Upload your resume</label>
               <div class="uploadfilecontainer" (click)="fileInput.click()" najahFileDrag
                 (onFileDropped)="uploadFile($event)">
-                <input  formControlName="resume" hidden type="file" #fileInput
+                <input   hidden type="file" #fileInput
                   (change)="uploadFile($event.target.files)" >
 
                   <input matInput formControlName="resume" hidden>
@@ -65,11 +65,22 @@
 
           <div class="col-md-6">
             <mat-form-field class="width-100">
-              <mat-label>You are applying for ?</mat-label>
+              <mat-label>Industry</mat-label>
               <mat-select formControlName="industry" required>
                 <mat-option *ngFor="let industry of specialization" [value]="industry">{{industry.name}}</mat-option>
               </mat-select>
               <mat-error *ngIf="jobSeekerForm.get('industry').hasError('required')">This feild is required</mat-error>
+            </mat-form-field>
+          </div>
+
+
+          <div class="col-md-6">
+            <mat-form-field class="width-100">
+              <mat-label>You are applying for ?</mat-label>
+              <mat-select formControlName="divisionId" required>
+                <mat-option *ngFor="let division of divisions" [value]="division.id">{{division.divisionName}}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="jobSeekerForm.get('divisionId').hasError('required')">This feild is required</mat-error>
             </mat-form-field>
           </div>
 

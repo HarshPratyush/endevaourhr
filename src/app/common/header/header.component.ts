@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit {
 
   getAllIndustriesHeader(){
     this.commonService.getHeaders().subscribe(d=>{
-      this.industries=d;
+      this.industries=d.data;
     })
   }
 

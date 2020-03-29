@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from 'src/app/common/common.service';
 import { Router } from '@angular/router';
+import { AppConstants } from 'src/app/app-constants';
 
 @Component({
   selector: 'najah-industries-main',
@@ -23,7 +24,7 @@ export class IndustriesMainComponent implements OnInit {
   }
   getAllSpecialization(){
     this.commonSerive.getIndustries().subscribe(result=>{
-      this.specialization= result;
+      this.specialization= result.data;
     })
 
   }
@@ -37,5 +38,9 @@ export class IndustriesMainComponent implements OnInit {
     this._routrer.navigate(["/industries",industry.url])
     else
     this._routrer.navigateByUrl("/industries")
+  }
+
+  getImageUrl(industry){
+   return AppConstants.API_HOME_URL+'jobs/downloadAttachment/'+industry.attachmentId;
   }
 }

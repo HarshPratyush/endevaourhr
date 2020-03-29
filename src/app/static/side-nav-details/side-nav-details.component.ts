@@ -12,6 +12,34 @@ export class SideNavDetailsComponent implements OnInit {
 
   jobs:any;
   jobTitle:any[]=[];
+
+   clients:{image:string,clientName:string,clientLocation:string,feedback:string}[]=[
+     {
+       "image":"./assets/images/client.png",
+       "clientName":"Client Name",
+       "clientLocation":"Location",
+       "feedback":"What a great company offering great services. Very professional, knowledgeable and efficient! Highly recommended. Najah Human Resources."
+     },
+     {
+      "image":"./assets/images/client.png",
+      "clientName":"Client Name",
+      "clientLocation":"Location",
+      "feedback":"What a great company offering great services. Very professional, knowledgeable and efficient! Highly recommended. Najah Human Resources."
+    },
+    {
+      "image":"./assets/images/client.png",
+      "clientName":"Client Name",
+      "clientLocation":"Location",
+      "feedback":"What a great company offering great services. Very professional, knowledgeable and efficient! Highly recommended. Najah Human Resources."
+    },
+    {
+      "image":"./assets/images/client.png",
+      "clientName":"Client Name",
+      "clientLocation":"Location",
+      "feedback":"What a great company offering great services. Very professional, knowledgeable and efficient! Highly recommended. Najah Human Resources."
+    }
+   ]
+
   constructor(private _router:Router,private commonService:CommonService) { }
   customOptions: OwlOptions = {
     loop: true,
@@ -68,7 +96,7 @@ $(window).scroll(function() {                  // assign scroll event listener
 
   getAllJobs(){
     this.commonService.getAllJobs().subscribe(d=>{
-      this.jobs=d;
+      this.jobs=d.data;
       this.jobTitle=Object.keys(this.jobs)
     })
   }

@@ -1,36 +1,36 @@
 {
     "Computer Science":[
         {
-            "postions":10,
+            "positions":10,
             "locations":"UAE",
             "division":"Information Security"
         },
         {
-            "postions":35,
+            "positions":35,
             "locations":"India",
             "division":"Hardware"
         }
     ],
     "Law / Consultancy":[
         {
-            "postions":12,
+            "positions":12,
             "locations":"UAE",
             "division":"Associate"
         },
         {
-            "postions":35,
+            "positions":35,
             "locations":"India",
             "division":"Assistant"
         }
     ],
     "Security/Police":[
         {
-            "postions":22,
+            "positions":22,
             "locations":"London",
             "division":"Guards"
         },
         {
-            "postions":40,
+            "positions":40,
             "locations":"India",
             "division":"Assitant Police"
         }

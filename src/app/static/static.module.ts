@@ -39,7 +39,7 @@ import { EmployerComponent } from './employer/employer.component';
     MatDatepickerModule,
     MatNativeDateModule
   ],
-  exports:[SideNavDetailsComponent,BreadCrumbComponent],
+  exports:[SideNavDetailsComponent,BreadCrumbComponent,FileDragDirective],
   providers:[MatDatepickerModule]
 })
 export class StaticModule { }
