@@ -43,4 +43,16 @@ export class CommonService {
     return this.http.post(AppConstants.POST_DIVISION,data);
   }
 
+  findAllJobs():Observable<any>{
+    return this.http.get(AppConstants.FIND_ALL_JOBS)
+  }
+
+  archiveJob(data:any):Observable<any>{
+    return this.http.put(AppConstants.ARCHIVE_JOB +data,null)
+  }
+
+  findAllJobSeekers():Observable<any>{
+    return this.http.get(AppConstants.GET_ALL_JOB_SEEKERS)
+  }
+
 }

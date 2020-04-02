@@ -21,11 +21,14 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { FileDragDirective } from './file-drag.directive';
 import { EmployerComponent } from './employer/employer.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [HomeComponent, ContactUsComponent, 
     AboutUsComponent, UnderConstructionComponent,
-     ServiceComponent,IndustrySelectorComponent,SideNavDetailsComponent, BreadCrumbComponent,JobSeekerComponent, FileDragDirective, EmployerComponent],
+     ServiceComponent,IndustrySelectorComponent,SideNavDetailsComponent, BreadCrumbComponent,JobSeekerComponent, FileDragDirective, EmployerComponent,ConfirmationDialogComponent],
   imports: [
     CommonModule,
     StaticRoutingModule,
@@ -37,9 +40,11 @@ import { EmployerComponent } from './employer/employer.component';
     ReactiveFormsModule,
     MatCardModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatDialogModule,
+    MatButtonModule
   ],
-  exports:[SideNavDetailsComponent,BreadCrumbComponent,FileDragDirective],
+  exports:[SideNavDetailsComponent,BreadCrumbComponent,FileDragDirective,ConfirmationDialogComponent],
   providers:[MatDatepickerModule]
 })
 export class StaticModule { }
