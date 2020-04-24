@@ -20,9 +20,10 @@ import { JobSeekersComponent } from './job-seekers/job-seekers.component';
 import { ConfirmationDialogComponent } from '../static/confirmation-dialog/confirmation-dialog.component';
 import { SearchPipe } from './search.pipe';
 import { MatButtonModule } from '@angular/material/button';
+import { LoginComponent } from './authentication/login/login.component';
 
 @NgModule({
-  declarations: [AddIndustryComponent, AddDivisionComponent, ManageJobsComponent,JobSeekersComponent, SearchPipe],
+  declarations: [AddIndustryComponent, AddDivisionComponent, ManageJobsComponent,JobSeekersComponent, SearchPipe, LoginComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

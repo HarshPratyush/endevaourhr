@@ -18,3 +18,8 @@
     color: #000;
     text-align: center;
 }
+
+owl-carousel-o img{
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+}

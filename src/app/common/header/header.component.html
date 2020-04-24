@@ -40,17 +40,35 @@
             data-animations="fadeInDown fadeInLeft fadeInUp fadeInRight" data-toggle="dropdown"
             mdbRippleRadius>Industries</a>
           <div class="dropdown-menu arrow " aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" *ngFor="let industry of industries"
+            <a class="dropdown-item" *ngFor="let industry of industries | slice:0:11;"
               (click)="routeToIndustry(industry)">{{industry.name}}</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" (click)="routeToIndustry()">View All</a>
           </div>
         </li>
+
         <li class="nav-item" [ngClass]="{'active': router.url=='/jobseeker'}">
           <a class="nav-link" mdbRippleRadius routerLink="jobseeker">Job Seeker</a>
         </li>
         <li class="nav-item" [ngClass]="{'active': router.url=='/employer'}">
           <a class="nav-link" mdbRippleRadius routerLink="employer">Employer</a>
+        </li>
+
+        
+        <li class="nav-item dropdown" [ngClass]="{'active': router.url.includes('admin')}" *ngIf="userService.checkLoggedIn()">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+            data-animations="fadeInDown fadeInLeft fadeInUp fadeInRight" data-toggle="dropdown"
+            mdbRippleRadius>Admin</a>
+          <div class="dropdown-menu arrow " aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="admin/industry">Add-Industry</a>
+            <a class="dropdown-item" routerLink="admin/division">Add-Division</a>
+            <a class="dropdown-item" routerLink="admin/jobs">Manage-Jobs</a>
+            <a class="dropdown-item" routerLink="admin/jobSeekers">Resumes</a>
+
+          </div>
+        </li>
+        <li class="nav-item" *ngIf="userService.checkLoggedIn()">
+          <a class="nav-link" mdbRippleRadius (click)="userService.logout()"><i class=" fa fa-sign-out"></i>Logout</a>
         </li>
       </ul>
       <!-- <form class="form-inline mt-2 mt-md-0">

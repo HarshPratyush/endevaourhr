@@ -69,6 +69,7 @@ export class SingleIndustryComponent implements OnInit {
   }
 
   makeDescriptionBreakdown(){
+    this.descriptionBreakdown=[];
       let dec = this.industry.description;
       let dscArr:string[]=dec.split(".");
       let str='';
@@ -93,7 +94,7 @@ export class SingleIndustryComponent implements OnInit {
   }
 
   getImageUrl(industry){
-    return AppConstants.API_HOME_URL+'jobs/downloadAttachment/'+industry.attachmentId;
+    return AppConstants.API_HOME_URL+'anonymous/downloadAttachment/'+industry.attachmentId;
    }
 
 }

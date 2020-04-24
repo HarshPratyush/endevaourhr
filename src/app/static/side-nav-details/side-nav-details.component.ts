@@ -15,27 +15,33 @@ export class SideNavDetailsComponent implements OnInit {
 
    clients:{image:string,clientName:string,clientLocation:string,feedback:string}[]=[
      {
-       "image":"./assets/images/client.png",
-       "clientName":"Client Name",
-       "clientLocation":"Location",
+       "image":"./assets/images/algeemi.jpg",
+       "clientName":"Al Geemi",
+       "clientLocation":"Abu Dhabi",
        "feedback":"What a great company offering great services. Very professional, knowledgeable and efficient! Highly recommended. Najah Human Resources."
      },
      {
-      "image":"./assets/images/client.png",
-      "clientName":"Client Name",
-      "clientLocation":"Location",
+      "image":"./assets/images/innovation-logo.jpg",
+      "clientName":"Innovationuae",
+      "clientLocation":"Dubai",
       "feedback":"What a great company offering great services. Very professional, knowledgeable and efficient! Highly recommended. Najah Human Resources."
     },
     {
-      "image":"./assets/images/client.png",
-      "clientName":"Client Name",
-      "clientLocation":"Location",
+      "image":"./assets/images/liberty.png",
+      "clientName":"Liberty Building Systems",
+      "clientLocation":"Sharjah",
       "feedback":"What a great company offering great services. Very professional, knowledgeable and efficient! Highly recommended. Najah Human Resources."
     },
     {
-      "image":"./assets/images/client.png",
-      "clientName":"Client Name",
-      "clientLocation":"Location",
+      "image":"./assets/images/National Plastic.jpg",
+      "clientName":"National Plastic",
+      "clientLocation":"Sharjah",
+      "feedback":"What a great company offering great services. Very professional, knowledgeable and efficient! Highly recommended. Najah Human Resources."
+    },
+    {
+      "image":"./assets/images/audex.gif",
+      "clientName":"Audex Pte Ltd",
+      "clientLocation":"Singapore",
       "feedback":"What a great company offering great services. Very professional, knowledgeable and efficient! Highly recommended. Najah Human Resources."
     }
    ]

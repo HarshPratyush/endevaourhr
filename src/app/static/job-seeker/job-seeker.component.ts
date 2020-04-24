@@ -14,6 +14,7 @@ import * as moment from 'moment';
 export class JobSeekerComponent implements OnInit {
   files=[];
   fileExt;
+  fileType;
   tomorrow:Date=new Date();
   breadCrumb:{name:string,url:string,isLast:boolean}[]=[
     {name:'Home',url:'',isLast:false},
@@ -59,6 +60,7 @@ export class JobSeekerComponent implements OnInit {
     this.spinner.show();
     let data = this.jobSeekerForm.getRawValue();
     data.fileExt=this.fileExt;
+    data.fileType=this.fileType
 
     const momentDate = new Date(data.dob); // Replace event.value with your date value
     const formattedDate = moment(momentDate).format("YYYY-MM-DD");
@@ -74,6 +76,8 @@ export class JobSeekerComponent implements OnInit {
     for (let index = 0; index < event.length; index++) {
       const element = event[index];
       this.files.push(element.name)
+      this.fileType = element.type;
+
       this.getBase64(element,'resume');
     }  
     this.getFileExt()

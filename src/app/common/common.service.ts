@@ -37,7 +37,7 @@ export class CommonService {
     return this.http.post(AppConstants.POST_JOB,data);
   }
   addIndustry(data:any){
-    return this.http.post(AppConstants.GET_ALL_INDUSTRIES,data);
+    return this.http.post(AppConstants.POST_INDUSTRY,data);
   }
   submitDivision(data:any){
     return this.http.post(AppConstants.POST_DIVISION,data);
@@ -53,6 +53,10 @@ export class CommonService {
 
   findAllJobSeekers():Observable<any>{
     return this.http.get(AppConstants.GET_ALL_JOB_SEEKERS)
+  }
+
+  getFile(data:any):Observable<any>{
+    return this.http.get(AppConstants.GET_FILE+data)
   }
 
 }

@@ -34,8 +34,54 @@
     margin-top: 5px;
 }
 
+.modal-dialog{
+    max-width: 39%;
+}
+
+.modal-content{
+    border: none !important;
+    background: none !important;
+}
+
+.modal-header{
+    border: none !important;
+}
+
+.modal-header button{
+    font-size: 100px !important;
+    color: #ffffff;
+    font-weight: lighter;
+}
+
 @media screen and (max-width: 600px) {
     .floating-sidebar {
         display: none;
     }
+}
+
+@media screen and (max-width: 1024px){
+    .modal-dialog{
+        max-width: 100%;
+        min-width: 60%;
+        height: 100%;
+    }
+
+    .modal-content{
+        height: 100%;
+    }
+
+    .modal-header{
+        height: 81%;
+    }
+}
+
+
+
+.welcome-img{
+    height: 100%;
+    width: 100%;
+}
+
+.modal-header{
+    display: block;
 }
