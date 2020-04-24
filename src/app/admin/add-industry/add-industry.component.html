@@ -1,0 +1,84 @@
+<najah-bread-crumb [pageName]="'Add Industries'" [breadCrumb]="breadCrumb" [imageUrl]="'./assets/images/banner-2.jpg'"></najah-bread-crumb>
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-md-9 row padding">
+      <form class="width-100" [formGroup]="addIndustry" (ngSubmit)="addIndustry.valid?submitForm():''">
+        <mat-card>
+          <mat-card-title>
+        <div class="align-center">Add Industry</div>
+        <hr class="divider">
+      </mat-card-title>
+      <mat-card-content>
+        <div class="row">
+
+          <div class="col-md-6">
+            <mat-form-field class="width-100">
+              <mat-label>Industry Name</mat-label>
+              <input matInput formControlName="name" required placeholder="Compputer Science">
+              <mat-error *ngIf="addIndustry.get('name').hasError('required')">This feild is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field class="width-100">
+              <mat-label>Routing Url</mat-label>
+              <input matInput formControlName="url" required placeholder="computer">
+              <mat-error *ngIf="addIndustry.get('url').hasError('required')">This feild is required</mat-error>
+            </mat-form-field>
+          </div>
+
+
+
+          <div class="col-md-12">
+            <mat-form-field class="width-100">
+              <label>Upload an image</label>
+              
+
+              <div class="uploadfilecontainer" (click)="fileInput.click()" najahFileDrag
+                (onFileDropped)="uploadFile($event)">
+                <input   hidden type="file" #fileInput
+                  (change)="uploadFile($event.target.files)" >
+
+                  <input matInput formControlName="image" hidden>
+              </div>
+              <div class="files-list" *ngFor="let file of files;let i= index">
+               
+                <p>  
+                    <img class="industry-img" align="center" *ngIf="addIndustry.get('image').value" [src]="addIndustry.get('image').value">
+                </p>
+                <button class="delete-file" (click)="deleteAttachment(i)">
+                  <img src="/assets/images/delete.webp">
+                </button>
+              </div>
+              <mat-error *ngIf="addIndustry.get('image').hasError('required')">This feild is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-12">
+            <mat-form-field class="width-100">
+              <mat-label>Breif Decription</mat-label>
+              <textarea matInput formControlName="description" required
+                placeholder="Computer Science is"></textarea>
+              <mat-error *ngIf="addIndustry.get('description').hasError('required')">This feild is required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col-md-12 row ">
+          <div class="col-md-2 offset-md-8 margin-top-20">
+            <button type="save" class="btn btn-info margin-20 save float-right"><i class=" fa fa-paper-plane"></i> Send</button>
+          </div>
+          <div class="col-md-2 margin-top-20">
+            <button type="reset" class="btn btn-info margin-20 danger float-right"><i class=" fa fa-times-circle"></i>
+              Reset</button>
+          </div>
+        </div>
+      </mat-card-content>
+      </mat-card>
+      </form>
+    </div>
+    <div class="col-md-3">
+        <najah-side-nav-details></najah-side-nav-details>
+      </div>
+  </div>
+</div>

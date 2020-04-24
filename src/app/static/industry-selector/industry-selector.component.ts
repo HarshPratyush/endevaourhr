@@ -17,7 +17,7 @@ export class IndustrySelectorComponent implements OnInit {
   }
   getAllSpecialization(){
     this.commonSerive.getIndustries().subscribe(result=>{
-      this.specialization= result;
+      this.specialization= result.data;
     })
 
   }

@@ -1,5 +1,3 @@
-import { library } from '@fortawesome/fontawesome-svg-core';
-
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons/faFacebookF';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
 import { faRedditAlien } from '@fortawesome/free-brands-svg-icons/faRedditAlien';
@@ -24,10 +22,8 @@ import { faPrint } from '@fortawesome/free-solid-svg-icons/faPrint';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
 
-const icons = [
+export const icons = [
   faFacebookF, faTwitter, faLinkedinIn, faGooglePlusG, faPinterestP, faRedditAlien, faTumblr,
   faWhatsapp, faVk, faFacebookMessenger, faTelegramPlane, faMix, faXing, faCommentAlt, faLine,
   faEnvelope, faCheck, faPrint, faExclamation, faLink, faEllipsisH, faMinus,
 ];
-
-library.add(...icons);

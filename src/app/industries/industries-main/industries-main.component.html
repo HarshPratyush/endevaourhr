@@ -3,14 +3,16 @@
 
 <div class="container-fluid ">
     <div class="row">
-        <div class="col-md-9 row">
+        <div class="col-md-9">
+        <div class=" row">
         <div class="col-md-6 description" *ngFor="let industry of specialization">
             <div class="name">{{industry.name}}</div>
-            <img class="industry-img" align="left" [src]="industry.image">
-           <p class="max-lines"> 
+            <img class="industry-img" align="left" [src]="getImageUrl(industry)">
+           <p > 
                {{getSlicedString(industry.description,300)}}
            </p> 
            <button type="button" class="btn btn-info" (click)="routeToIndustry(industry)"><i class="fa fa-arrow-right"></i> Have Look</button>
+        </div>
         </div>
         </div>
         <div class="col-md-3">

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoadingBarService } from '@ngx-loading-bar/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 declare var $:any;  
@@ -8,7 +8,7 @@ declare var $:any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   constructor(public loader: LoadingBarService,private spinner: NgxSpinnerService){
     this.loader.progress$.subscribe(data=>{
       if(data>0)
@@ -20,6 +20,10 @@ export class AppComponent {
         this.spinner.hide();
       }
     })
+  }
+
+  ngOnInit(){
+    $("#myModal").modal('show');
   }
 
   

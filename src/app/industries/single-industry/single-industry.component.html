@@ -2,16 +2,16 @@
 <div class="container-fluid margin-bottom-30">
     <div class="row">
         <div class="col-md-9" *ngIf="industry">
-            <img class="industry-img" align="left" [src]="industry.image">
+            <img class="industry-img" align="left" [src]="getImageUrl(industry)">
             <p *ngFor="let desc of descriptionBreakdown">
                 {{desc}}
             </p>
 
-                    <div class="division">
+                    <div class="division" *ngIf="industry.divisions.length">
                         <span class="division-title">Our {{industry.name}} can provide candidates for a number of job
                             openings like: –</span>
                         <ul>
-                            <li *ngFor="let div of industry.division">{{div}}</li>
+                            <li *ngFor="let div of industry.divisions">{{div}}</li>
                         </ul>
                     </div>
 
@@ -29,8 +29,8 @@
                             <tbody>
                               <tr *ngFor="let job of industry.availablePost;let i=index">
                                 <th scope="row">{{i+1}}</th>
-                                <td>{{job.postions}}</td>
-                                <td>{{job.locations}}</td>
+                                <td>{{job.positions}}</td>
+                                <td>{{job.location}}</td>
                                 <td>{{job.division}}</td>
                               </tr>
                               </tbody>

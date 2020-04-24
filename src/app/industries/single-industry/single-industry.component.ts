@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonService } from 'src/app/common/common.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { AppConstants } from 'src/app/app-constants';
 
 @Component({
   selector: 'najah-single-industry',
@@ -29,7 +30,7 @@ export class SingleIndustryComponent implements OnInit {
 
   getNextAndPrev(industryName:string){
     this.commonService.getIndustries().subscribe(d=>{
-      let data = d as any[];
+      let data = d.data as any[];
       let index = data.findIndex(d=>d.url===industryName);
       if(index<0)
       this._routrer.navigateByUrl("/industries");
@@ -51,9 +52,9 @@ export class SingleIndustryComponent implements OnInit {
   }
   getSingleIndustry(industryName:string){
     this.commonService.getSingleIndustry(industryName).subscribe(data=>{
-      if(data)
+      if(data.data)
       {
-      this.industry = data;
+      this.industry = data.data;
      this.breadCrumb=[
         {name:'Home',url:'',isLast:false},
         {name:'Industries', url:'/industries',isLast:false}
@@ -68,6 +69,7 @@ export class SingleIndustryComponent implements OnInit {
   }
 
   makeDescriptionBreakdown(){
+    this.descriptionBreakdown=[];
       let dec = this.industry.description;
       let dscArr:string[]=dec.split(".");
       let str='';
@@ -90,5 +92,9 @@ export class SingleIndustryComponent implements OnInit {
     else
     this._routrer.navigateByUrl("/industries")
   }
+
+  getImageUrl(industry){
+    return AppConstants.API_HOME_URL+'anonymous/downloadAttachment/'+industry.attachmentId;
+   }
 
 }

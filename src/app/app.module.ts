@@ -13,11 +13,14 @@ import { StaticModule } from './static/static.module';
 import { ShareButtonsModule } from '@ngx-share/buttons';
 import { SocialShareComponent } from './common/social-share/social-share.component';
 import { HttpInterceptorService } from './common/http-interceptor.service';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import {MatButtonModule} from '@angular/material/button';
 import { ToastrModule } from 'ngx-toastr';
 import { MatIconModule } from '@angular/material/icon';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { icons } from '../icon';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +34,8 @@ import { MatIconModule } from '@angular/material/icon';
     AppRoutingModule,
     BrowserAnimationsModule,
     LoadingBarHttpClientModule,
+    HttpClientModule,
+    HttpClientXsrfModule,
     LoadingBarRouterModule,
     LoadingBarModule,
     StaticModule,
@@ -38,9 +43,14 @@ import { MatIconModule } from '@angular/material/icon';
     NgxSpinnerModule,
     MatButtonModule,
     MatIconModule,
+    FontAwesomeModule,
     ToastrModule.forRoot()
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:HttpInterceptorService,multi:true}],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(library:FaIconLibrary){
+    library.addIcons(...icons)
+  }
+}

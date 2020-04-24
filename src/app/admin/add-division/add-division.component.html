@@ -1,0 +1,50 @@
+<najah-bread-crumb [pageName]="'Add Division'" [breadCrumb]="breadCrumb" [imageUrl]="'./assets/images/banner-1.jpg'"></najah-bread-crumb>
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-md-9 row padding">
+      <form class="width-100" [formGroup]="divisionForm" (ngSubmit)="divisionForm.valid?submitForm():''">
+        <mat-card>
+          <mat-card-title>
+        <div class="align-center">Your Profile</div>
+        <hr class="divider">
+      </mat-card-title>
+      <mat-card-content>
+        <div class="row">
+
+          <div class="col-md-6">
+            <mat-form-field class="width-100">
+              <mat-label>Division Name</mat-label>
+              <input matInput formControlName="divisionName" required placeholder="Compputer Science">
+              <mat-error *ngIf="divisionForm.get('divisionName').hasError('required')">This feild is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field class="width-100">
+              <mat-label>Industry</mat-label>
+              <mat-select formControlName="industryId" required>
+                <mat-option *ngFor="let industry of specialization" [value]="industry.industryId">{{industry.name}}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="divisionForm.get('industryId').hasError('required')">This feild is required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>          
+
+        <div class="col-md-12 row ">
+          <div class="col-md-2 offset-md-8 margin-top-20">
+            <button type="save" class="btn btn-info margin-20 save float-right"><i class=" fa fa-paper-plane"></i> Send</button>
+          </div>
+          <div class="col-md-2 margin-top-20">
+            <button type="reset" class="btn btn-info margin-20 danger float-right"><i class=" fa fa-times-circle"></i>
+              Reset</button>
+          </div>
+        </div>
+      </mat-card-content>
+      </mat-card>
+      </form>
+    </div>
+    <div class="col-md-3">
+        <najah-side-nav-details></najah-side-nav-details>
+      </div>
+  </div>
+</div>

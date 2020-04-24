@@ -19,33 +19,47 @@ export class EmployerComponent implements OnInit {
 
   employerForm:FormGroup= new FormGroup({
     'name':new FormControl('',[Validators.required,Validators.minLength(4),Validators.maxLength(100)]),
-    'email': new FormControl('',[Validators.required,Validators.email]),
+    'emailId': new FormControl('',[Validators.required,Validators.email]),
     'subject': new FormControl('',[Validators.minLength(10),Validators.maxLength(100)]),
-    'message': new FormControl('',[Validators.required,Validators.minLength(50),Validators.maxLength(250)]),
+    'requirement': new FormControl('',[Validators.required,Validators.minLength(50),Validators.maxLength(250)]),
     'industry': new FormControl('',[Validators.required]),
-    'divison': new FormControl('',[Validators.required]),
-    'numberOfRequirment': new FormControl('',[Validators.required,Validators.min(1)]),
-    'companyname': new FormControl('', [Validators.required,Validators.required,Validators.minLength(4),Validators.maxLength(100)]),
+    'divisionId': new FormControl('',[Validators.required]),
+    'location': new FormControl('',[Validators.required]),
+    'openings': new FormControl('',[Validators.required,Validators.min(1)]),
+    'companyName': new FormControl('', [Validators.required,Validators.required,Validators.minLength(4),Validators.maxLength(100)]),
   })
 
   specialization : any[]=[]
+  divisions : any[]=[]
   constructor(private commonSerive:CommonService,private _routrer:Router,private  spinner: NgxSpinnerService,private toastr: ToastrService) {
    }
 
-  ngOnInit() {
+   ngOnInit() {
     this.getAllSpecialization();
+    this.employerForm.controls['industry'].valueChanges.subscribe(d=>{
+      this.getDivsion(d);
+    })
   }
   getAllSpecialization(){
     this.commonSerive.getIndustries().subscribe(result=>{
-      this.specialization= result;
+      this.specialization= result.data;
     })
 
   }
 
+  getDivsion(data){
+
+    this.commonSerive.getDivision(data.url).subscribe(d=>{
+      this.divisions=d.data;
+    });
+  }
+
   submitForm(){
     this.spinner.show();
-
-    setTimeout(()=>{this.spinner.hide();this.toastr.success('We got your requirment. We will start looking for some awesome team mate','Success' );},3000)
+    let data = this.employerForm.getRawValue();
+    this.commonSerive.submitJob(data).subscribe(d=>{
+      this.toastr.success('We got your requirement. Have a good day.','Success' );
+    })
   }
 
 }

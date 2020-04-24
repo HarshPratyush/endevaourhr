@@ -10,27 +10,11 @@
     <hr class="divider">
 
     <owl-carousel-o [options]="customOptions">
-            <ng-template carouselSlide>
-                    <img class="rounded-circle client-image" src="./assets/images/client.png" alt="Generic placeholder image" >
-                    <div class="text-center client-name">Client Name, Client Location</div>
-                    <p>“
-                        Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac,
-                         vestibulum at eros. Praesent commodo cursus magna.”</p>
-            </ng-template>  
-            <ng-template carouselSlide>
-                    <img class="rounded-circle client-image" src="./assets/images/client.png" alt="Generic placeholder image" >
-                    <div class="text-center client-name">Client Name , Client Location</div>
-                    <p>“
-                        Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac,
-                         vestibulum at eros. Praesent commodo cursus magna.”</p>
-            </ng-template>  
-            <ng-template carouselSlide>
-                    <img class="rounded-circle client-image" src="./assets/images/client.png" alt="Generic placeholder image" >
-                    <div class="text-center client-name">Client Name , Client Location</div>
-                    <p>“
-                        Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac,
-                         vestibulum at eros. Praesent commodo cursus magna.”</p>
-            </ng-template>  
+            <ng-template carouselSlide *ngFor="let client of clients">
+                    <img class="rounded-circle client-image" [src]="client.image" alt="Client Photo" >
+                    <div class="text-center client-name">{{client.clientName}}, {{client.clientLocation}}</div>
+                    <p>“{{client.feedback}}”</p>
+            </ng-template>   
  
           </owl-carousel-o>
 
@@ -42,7 +26,7 @@
     <img  class="img-fluid" src="./assets/images/job-apply.jpg" (click)="routeByUrl('jobseeker')">
     </div>
 
-    <div>
+    <div *ngIf="jobTitle.length">
         <span>Latest Job</span>
     <hr class="divider">
     <owl-carousel-o [options]="customOptions">
@@ -58,8 +42,8 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let job of jobs[title];let i=index">
-                    <td>{{job.postions}}</td>
-                    <td>{{job.locations}}</td>
+                    <td>{{job.positions}}</td>
+                    <td>{{job.location}}</td>
                     <td>{{job.division}}</td>
                   </tr>
                   </tbody>
