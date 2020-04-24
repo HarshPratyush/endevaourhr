@@ -18,6 +18,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import {MatButtonModule} from '@angular/material/button';
 import { ToastrModule } from 'ngx-toastr';
 import { MatIconModule } from '@angular/material/icon';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { icons } from '../icon';
+
 
 @NgModule({
   declarations: [
@@ -40,9 +43,14 @@ import { MatIconModule } from '@angular/material/icon';
     NgxSpinnerModule,
     MatButtonModule,
     MatIconModule,
+    FontAwesomeModule,
     ToastrModule.forRoot()
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:HttpInterceptorService,multi:true}],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(library:FaIconLibrary){
+    library.addIcons(...icons)
+  }
+}
