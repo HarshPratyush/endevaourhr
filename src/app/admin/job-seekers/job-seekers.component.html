@@ -1,0 +1,83 @@
+<najah-bread-crumb [pageName]="'All Job Seekers'" [breadCrumb]="breadCrumb" [imageUrl]="'./assets/images/banner-2.jpg'"></najah-bread-crumb>
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-md-9">
+
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field  class="width-100">
+            <mat-label>Industry</mat-label>
+            <mat-select [(ngModel)]="selectedSpecialization" (selectionChange)="getDivision(select.value)" #select>
+              <mat-option *ngFor="let industry of specialization" [value]="industry" >{{industry.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+
+        <div class="col-md-5">
+          <mat-form-field  class="width-100"> 
+            <mat-label>Division</mat-label>
+            <mat-select [(ngModel)]="selectedDivision" >
+              <mat-option *ngFor="let division of divisions" [value]="division">{{division.divisionName}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-1">
+         <button class="btn btn-info"(click)="selectedSpecialization=null;selectedDivision=null;"><mat-icon>refresh</mat-icon></button>
+        </div>
+        </div>
+
+        <mat-accordion>
+            <mat-expansion-panel *ngFor = "let jobSeeker of (allJobSeekers|search:'divisionId':(selectedDivision?selectedDivision.id:''))">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Name : {{jobSeeker.name}}
+                </mat-panel-title>
+                <mat-panel-title>
+                    Email : {{jobSeeker.emailId}}
+                  </mat-panel-title>
+                  <mat-panel-title>
+                    Subject : {{jobSeeker.subject}}
+                  </mat-panel-title>
+              </mat-expansion-panel-header>
+              <table class="table">
+                  <tr>
+                    <th>Name:</th>
+                    <td>{{jobSeeker.name}}</td>
+                  </tr>
+                  <tr>
+                    <th>Email:</th>
+                    <td>{{jobSeeker.emailId}}</td>
+                  </tr>
+                  <tr>
+                    <th>Subject:</th>
+                    <td>{{jobSeeker.subject}}</td>
+                  </tr>
+                  <tr>
+                    <th>Message:</th>
+                    <td>{{jobSeeker.message}}</td>
+                  </tr>
+                  <tr>
+                    <th>Date of Birth:</th>
+                    <td>{{jobSeeker.dob}}</td>
+                  </tr>
+                  <!-- <tr>
+                    <th>Resume:</th>
+                    <td>
+                      <button (click)="openDialog(jobSeeker)">Click to preview
+                      </button>
+              </td>
+                  </tr> -->
+              </table>
+
+            </mat-expansion-panel>
+          </mat-accordion>
+
+          <!-- <iframe width="500" height="600" *ngIf="allJobSeekers.length" [attr.src]="getPath(allJobSeekers[1])"></iframe> -->
+    </div>
+    <div class="col-md-3">
+        <najah-side-nav-details></najah-side-nav-details>
+      </div>
+  </div>
+</div>

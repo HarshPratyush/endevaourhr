@@ -1,0 +1,18 @@
+.mat-expansion-panel-header-description, .mat-expansion-panel-header-title {
+    flex-basis: 0;
+  }
+
+  .mat-expansion-panel-header-description {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .mat-grid-tile{
+      display: flex;
+    justify-content: flex-start;
+  }
+
+  .mat-expansion-panel{
+    margin-bottom: 4px;
+    border-radius: 0px !important;
+  }
