@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
-import { filter, map, mergeMap,catchError } from 'rxjs/operators';
-import { CommonService } from '../common.service';
+import { filter, map, mergeMap } from 'rxjs/operators';
 import { UserService } from 'src/app/admin/authentication/api/user.service';
 declare var $:any;
 
@@ -13,9 +12,9 @@ declare var $:any;
 })
 export class HeaderComponent implements OnInit {
 
+  @Input()
   public industries:any[]=[];
-  constructor(public router:Router,private titleService:Title,private activatedRoute: ActivatedRoute,
-    private commonService:CommonService,public userService:UserService) {
+  constructor(public router:Router,private titleService:Title,private activatedRoute: ActivatedRoute,public userService:UserService) {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
       map(() => this.activatedRoute),
@@ -32,8 +31,6 @@ export class HeaderComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.getAllIndustriesHeader();
-
     $(function(){
       $(".dropdown").hover(            
               function() {
@@ -49,11 +46,6 @@ export class HeaderComponent implements OnInit {
       });
   }
 
-  getAllIndustriesHeader(){
-    this.commonService.getHeaders().subscribe(d=>{
-      this.industries=d.data;
-    })
-  }
 
   routeToIndustry(industry ? : any){
     if(industry)

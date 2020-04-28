@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingBarService } from '@ngx-loading-bar/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { CommonService } from './common/common.service';
 declare var $:any;  
 
 @Component({
@@ -9,7 +10,8 @@ declare var $:any;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  constructor(public loader: LoadingBarService,private spinner: NgxSpinnerService){
+  industries=[];
+  constructor(public loader: LoadingBarService,private spinner: NgxSpinnerService,private commonService:CommonService){
     this.loader.progress$.subscribe(data=>{
       if(data>0)
       {
@@ -23,7 +25,13 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(){
+    this.getAllIndustries();
     $("#myModal").modal('show');
+  }
+  getAllIndustries(){
+    this.commonService.getIndustries().subscribe(d=>{
+      this.industries = d.data;
+    })
   }
 
   

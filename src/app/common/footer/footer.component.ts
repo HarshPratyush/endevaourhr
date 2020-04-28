@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonService } from '../common.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,17 +8,11 @@ import { Router } from '@angular/router';
 })
 export class FooterComponent implements OnInit {
 
+  @Input()
   specialization : any[]=[]
-  constructor(private commonSerive:CommonService,private _routrer:Router) { }
+  constructor(private _routrer:Router) { }
 
   ngOnInit() {
-    this.getAllSpecialization();
-  }
-  getAllSpecialization(){
-    this.commonSerive.getIndustries().subscribe(result=>{
-      this.specialization= result.data;
-    })
-
   }
 
   routeToIndustry(industry ? : any){
