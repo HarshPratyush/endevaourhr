@@ -13,8 +13,7 @@ import { StaticModule } from './static/static.module';
 import { ShareButtonsModule } from '@ngx-share/buttons';
 import { SocialShareComponent } from './common/social-share/social-share.component';
 import { HttpInterceptorService } from './common/http-interceptor.service';
-import { HTTP_INTERCEPTORS, HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
-import { NgxSpinnerModule } from 'ngx-spinner';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import { ToastrModule } from 'ngx-toastr';
 import { MatIconModule } from '@angular/material/icon';
@@ -35,12 +34,10 @@ import { icons } from '../icon';
     BrowserAnimationsModule,
     LoadingBarHttpClientModule,
     HttpClientModule,
-    HttpClientXsrfModule,
     LoadingBarRouterModule,
     LoadingBarModule,
     StaticModule,
     ShareButtonsModule,
-    NgxSpinnerModule,
     MatButtonModule,
     MatIconModule,
     FontAwesomeModule,

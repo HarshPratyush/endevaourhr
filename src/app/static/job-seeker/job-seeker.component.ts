@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CommonService } from 'src/app/common/common.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import * as moment from 'moment';
 
@@ -33,7 +32,7 @@ export class JobSeekerComponent implements OnInit {
   })
   specialization : any[]=[]
   divisions : any[]=[]
-  constructor(private commonSerive:CommonService,private _routrer:Router,private  spinner: NgxSpinnerService,private toastr: ToastrService) {
+  constructor(private commonSerive:CommonService,private _routrer:Router,private toastr: ToastrService) {
    }
 
   ngOnInit() {
@@ -57,7 +56,6 @@ export class JobSeekerComponent implements OnInit {
   }
 
   submitForm(){
-    this.spinner.show();
     let data = this.jobSeekerForm.getRawValue();
     data.fileExt=this.fileExt;
     data.fileType=this.fileType
@@ -66,8 +64,12 @@ export class JobSeekerComponent implements OnInit {
     const formattedDate = moment(momentDate).format("YYYY-MM-DD");
     data.dob=formattedDate;
 
+    this.jobSeekerForm.disable();
     this.commonSerive.submitResume(data).subscribe(d=>{
+      this.jobSeekerForm.enable();
       this.toastr.success('We have got your resume. We will soon revert you back with some oppurtunity. Have a great day','Success' );
+    },error =>{
+      this.jobSeekerForm.enable();
     })
   }
 

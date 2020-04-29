@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LoadingBarService } from '@ngx-loading-bar/core';
-import { NgxSpinnerService } from 'ngx-spinner';
 import { CommonService } from './common/common.service';
 declare var $:any;  
 
@@ -11,17 +9,7 @@ declare var $:any;
 })
 export class AppComponent implements OnInit{
   industries=[];
-  constructor(public loader: LoadingBarService,private spinner: NgxSpinnerService,private commonService:CommonService){
-    this.loader.progress$.subscribe(data=>{
-      if(data>0)
-      {
-        this.spinner.show();
-      }
-      else
-      {
-        this.spinner.hide();
-      }
-    })
+  constructor(private commonService:CommonService){
   }
 
   ngOnInit(){

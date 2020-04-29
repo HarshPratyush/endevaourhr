@@ -1,13 +1,5 @@
 <najah-header [industries]="industries"></najah-header>
-<ngx-spinner
-bdOpacity = 0.9
-bdColor = "rgba(51, 51, 51, 0.8)"
-size = "medium"
-color = "#c3dfe0"
-type = "square-loader"
-fullScreen = "true"
-><p style="color: white" > Loading... </p>
-</ngx-spinner>
+<ngx-loading-bar [diameter]="'20px'" [height]="'5px'"></ngx-loading-bar>
 <div style="position: relative;" class="main-content" >
     <div  class="floating-sidebar position-left">
   <najah-social-share></najah-social-share>

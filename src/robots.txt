@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://najahhr.com/assets/sitemap.xml
