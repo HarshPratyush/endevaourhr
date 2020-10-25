@@ -1,5 +1,5 @@
 export class AppConstants {
-    public static API_HOME_URL ="http://najahr-env.eba-uuhjsmmb.us-east-2.elasticbeanstalk.com/";
+    public static API_HOME_URL ="https://najahr-backend.herokuapp.com/";
     public static GET_ALL_INDUSTRIES="anonymous/industry";  
     public static GET_HEADER_INDUSTRIES="anonymous/industry";
     public static GET_SINGLE_INDUSTRIES="anonymous/industry/";

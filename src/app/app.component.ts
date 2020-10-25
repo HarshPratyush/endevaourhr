@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from './common/common.service';
-declare var $:any;  
+// declare var $:any;  
 
 @Component({
   selector: 'najah-root',
@@ -14,7 +14,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit(){
     this.getAllIndustries();
-    $("#myModal").modal('show');
+    // $("#myModal").modal('show'); 
   }
   getAllIndustries(){
     this.commonService.getIndustries().subscribe(d=>{
